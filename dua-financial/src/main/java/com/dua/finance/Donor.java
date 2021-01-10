@@ -5,12 +5,12 @@ import com.opencsv.bean.CsvBindByPosition;
 
 public class Donor {
 
-	Donor()
+	public Donor()
 	{
 		
 	}
 	
-	Donor(String fullName, String firstName, String lastName, String email, double donationAmount, 
+	public Donor(String fullName, String firstName, String lastName, String email, double donationAmount, 
 			String phone, String address1, String address2, String city, String state, String zip)
 	{
 		this.fullName = fullName;
@@ -19,21 +19,30 @@ public class Donor {
 		this.email = email;
 		this.donationAmount = donationAmount;
 		this.phone = phone;
-		this.address1 = address1;
-		this.address2 = address2;
-		this.city = city;
+		this.address1 = Utility.getCamelCase(address1);
+		this.address2 = Utility.getCamelCase(address2);
+		this.city = Utility.getCamelCase(city);
 		this.state = state;
 		this.zip = zip;
 		
 		if(city == null && address1 !=null)
 		{
 			String[] temp = address1.split(",");
+			if(temp.length > 0)
+				this.address1 = temp[0].trim();
 			if(temp.length > 1)
-				this.city = temp[1];
+				this.city = Utility.getCamelCase(temp[1].trim());
 			if(temp.length > 2)			
-				this.state = temp[2];
-			if(temp.length > 3)
-				this.zip = temp[3];
+				this.state = temp[2].trim();
+			if(temp.length > 3 & this.zip == null)
+				this.zip = temp[3].trim();
+		}
+		if(this.state!=null)
+		{
+			this.state = this.state.toUpperCase();
+			if("TEXAS".equals(this.state))
+				this.state = "TX";
+				
 		}
 	}
 	

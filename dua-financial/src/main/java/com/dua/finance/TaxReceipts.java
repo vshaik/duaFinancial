@@ -24,6 +24,7 @@ public class TaxReceipts {
 	static final String SQUARE_FILE = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/square_transactions-2020-01-01-2021-01-01.csv";
 	static final String FINAL_REPORT = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/ConsolidatedList.csv";
 	static Map<String, Donor> donorMap = new HashMap<String, Donor>();
+	static Map<String, Donor> possibleMatchMap = new HashMap<String, Donor>();
 	static String fullName, firstName, lastName, email, phone, address1, address2, city, state, zip;
 	static double donationAmount;
 	
@@ -31,10 +32,10 @@ public class TaxReceipts {
 
 		readFromDonorBoxReport();
 		readFromFeelBlessedReport();
-		//readFromSquarePos();
+		readFromSquarePos();
 		
 		// Write to a final consolidated report
-		logger.info("Map size: "+donorMap.size());
+		logger.info("Map size: " + donorMap.size());
 		try {
 			
 			Writer writer = Files.newBufferedWriter(Paths.get(FINAL_REPORT));	
@@ -49,15 +50,16 @@ public class TaxReceipts {
 	        mappingStrategy.setColumnMapping(columns);
 			
 			StatefulBeanToCsvBuilder<Donor> builder = new StatefulBeanToCsvBuilder<>(writer);
-	        //StatefulBeanToCsv<Donor> beanWriter = builder.build();
+	        // StatefulBeanToCsv<Donor> beanWriter = builder.build();
 			StatefulBeanToCsv<Donor> beanWriter = builder.withMappingStrategy(mappingStrategy).build();
 
 				        
 	        List<Donor> finalList = new ArrayList<Donor>();
 			for (Map.Entry<String, Donor> entry : donorMap.entrySet()) {
-		        logger.info(entry.getKey() + ":" + entry.getValue());
+		        //logger.info(entry.getKey() + ":" + entry.getValue());
 		        finalList.add(entry.getValue());
 		    }
+			
 			beanWriter.write(finalList);
 			writer.close();
 		}
@@ -92,16 +94,18 @@ public class TaxReceipts {
             	city = null;
             	state = null;
             	zip = null;
-            	Donor donor = donorMap.get(email);
-            	if(donor==null) {
-            		donor = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+            	
+            	Donor donor = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+            	
+            	for (Map.Entry<String, Donor> entry : donorMap.entrySet()) {
+            		Donor temp = entry.getValue();
+            		if(Utility.matchNames(donor.getFullName(), temp.getFullName()))
+            		{
+            			logger.info(entry.getKey()+" -----------Match Found----------- "+donor);
+            			temp.setDonationAmount(temp.getDonationAmount()+donor.getDonationAmount());
+            			donorMap.put(entry.getKey(), temp);
+            		}
             	}
-            	else
-            	{
-            		donor.setDonationAmount(donor.getDonationAmount()+donationAmount);
-            		logger.info("------------------------------------------------------"+donor.getFullName());
-            	}
-            	donorMap.put(email, donor);
             	
             }
         }
@@ -134,7 +138,7 @@ public class TaxReceipts {
             	address2 = null;
             	city = null;
             	state = null;
-            	zip = null;
+            	zip = rec[4];
             	Donor donor = donorMap.get(email);
             	if(donor==null) {
             		donor = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
