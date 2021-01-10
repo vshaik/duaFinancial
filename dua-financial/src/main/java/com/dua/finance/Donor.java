@@ -1,5 +1,8 @@
 package com.dua.finance;
 
+import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvBindByPosition;
+
 public class Donor {
 
 	Donor()
@@ -21,18 +24,61 @@ public class Donor {
 		this.city = city;
 		this.state = state;
 		this.zip = zip;
+		
+		if(city == null && address1 !=null)
+		{
+			String[] temp = address1.split(",");
+			if(temp.length > 1)
+				this.city = temp[1];
+			if(temp.length > 2)			
+				this.state = temp[2];
+			if(temp.length > 3)
+				this.zip = temp[3];
+		}
 	}
 	
-	public String fullName;
+	@CsvBindByName(column = "Full Name")
+	@CsvBindByPosition(position = 0)
+	public String fullName;	
+	
+	@CsvBindByName(column = "First Name")
+	@CsvBindByPosition(position = 1)
 	public String firstName;
+	
+	@CsvBindByName(column = "Last Name")
+	@CsvBindByPosition(position = 2)
 	public String lastName;
+	
+	@CsvBindByName(column = "Email")
+	@CsvBindByPosition(position = 3)
 	public String email;
+	
+	@CsvBindByName(column = "Donation Amount")
+	@CsvBindByPosition(position = 4)
 	public double donationAmount;
+	
+	@CsvBindByName(column = "Phone")
+	@CsvBindByPosition(position = 5)
 	public String phone;
+	
+	@CsvBindByName(column = "Address Line1")
+	@CsvBindByPosition(position = 6)
 	public String address1;
+	
+	@CsvBindByName(column = "Address Line2")
+	@CsvBindByPosition(position = 7)
 	public String address2;
+	
+	@CsvBindByName(column = "City")
+	@CsvBindByPosition(position = 8)
 	public String city;
+	
+	@CsvBindByName(column = "State")
+	@CsvBindByPosition(position = 9)
 	public String state;
+	
+	@CsvBindByName(column = "Zip")
+	@CsvBindByPosition(position = 10)
 	public String zip;
 	
 	public String getFullName() {
@@ -42,13 +88,25 @@ public class Donor {
 		this.fullName = fullName;
 	}
 	public String getFirstName() {
-		return firstName;
+		if(firstName == null)
+		{
+			if(fullName != null) {
+				return getFullName().substring(0,getFullName().indexOf(" "));
+			}
+		}
+		return Utility.getCamelCase(firstName);		
 	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 	public String getLastName() {
-		return lastName;
+		if(lastName == null)
+		{
+			if(fullName != null) {
+				return getFullName().substring(getFullName().indexOf(" ")+1, getFullName().length());
+			}
+		}
+		return Utility.getCamelCase(lastName);
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
@@ -108,5 +166,4 @@ public class Donor {
 				+ email + ", donationAmount=" + donationAmount + ", phone=" + getPhone() + ", address1=" + address1
 				+ ", address2=" + address2 + ", city=" + city + ", state=" + state + ", zip=" + zip + "]";
 	}
-	
 }

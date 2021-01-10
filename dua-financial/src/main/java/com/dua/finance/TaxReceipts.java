@@ -1,6 +1,10 @@
 package com.dua.finance;
 
 import java.io.FileReader;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,6 +12,9 @@ import java.util.Map;
 import org.slf4j.LoggerFactory;
 
 import com.opencsv.CSVReader;
+import com.opencsv.bean.ColumnPositionMappingStrategy;
+import com.opencsv.bean.StatefulBeanToCsv;
+import com.opencsv.bean.StatefulBeanToCsvBuilder;
 
 public class TaxReceipts {
 	
@@ -15,6 +22,7 @@ public class TaxReceipts {
 	static final String DONORBOX_FILE = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/donorbox_darululoom-austin_from_2020-01-01_to_2020-12-31_cst.csv";
 	static final String FEEL_BLESSED_FILE = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/feelingBlessed_org_a6f59bc20c289d2de30592abd2b0f0ac.csv";
 	static final String SQUARE_FILE = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/square_transactions-2020-01-01-2021-01-01.csv";
+	static final String FINAL_REPORT = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/ConsolidatedList.csv";
 	static Map<String, Donor> donorMap = new HashMap<String, Donor>();
 	static String fullName, firstName, lastName, email, phone, address1, address2, city, state, zip;
 	static double donationAmount;
@@ -24,10 +32,40 @@ public class TaxReceipts {
 		readFromDonorBoxReport();
 		readFromFeelBlessedReport();
 		//readFromSquarePos();
+		
+		// Write to a final consolidated report
 		logger.info("Map size: "+donorMap.size());
-		for (Map.Entry<String, Donor> entry : donorMap.entrySet()) {
-	        logger.info(entry.getKey() + ":" + entry.getValue());
-	    }
+		try {
+			
+			Writer writer = Files.newBufferedWriter(Paths.get(FINAL_REPORT));	
+
+	        // mapping of columns with their positions
+	        ColumnPositionMappingStrategy<Donor> mappingStrategy = new ColumnPositionMappingStrategy<Donor>();
+	        // Set mappingStrategy type to Donor Type
+	        mappingStrategy.setType(Donor.class);
+	        // Fields in Donor Bean
+	        String[] columns = new String[] { "Full Name", "First Name", "Last Name", "Email", "Donation Amount", "Phone", "Address Line1", "Address Line2", "City", "State", "Zip" };
+	        // Setting the columns for mappingStrategy
+	        mappingStrategy.setColumnMapping(columns);
+			
+			StatefulBeanToCsvBuilder<Donor> builder = new StatefulBeanToCsvBuilder<>(writer);
+	        //StatefulBeanToCsv<Donor> beanWriter = builder.build();
+			StatefulBeanToCsv<Donor> beanWriter = builder.withMappingStrategy(mappingStrategy).build();
+
+				        
+	        List<Donor> finalList = new ArrayList<Donor>();
+			for (Map.Entry<String, Donor> entry : donorMap.entrySet()) {
+		        logger.info(entry.getKey() + ":" + entry.getValue());
+		        finalList.add(entry.getValue());
+		    }
+			beanWriter.write(finalList);
+			writer.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public static void readFromSquarePos() 

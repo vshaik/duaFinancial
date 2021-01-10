@@ -36,7 +36,10 @@ public class Utility {
 		{
 			return "";
 		}
-		s = s.replace(" ", "");
+		s = s.replace(" ", "").trim();
+		s = s.replace("(", "");
+		s = s.replace(")", "");
+		s = s.replace("-", "");
 		s =  s.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
 		return s;
 
