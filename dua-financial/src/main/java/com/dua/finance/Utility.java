@@ -1,5 +1,7 @@
 package com.dua.finance;
 
+import java.util.Map;
+
 import org.apache.commons.text.WordUtils;
 import org.slf4j.LoggerFactory;
 
@@ -9,7 +11,36 @@ public class Utility {
 
 	public static void main(String args[])
 	{
-		logger.info(formatPhone("1234456787"));
+		//logger.info(formatPhone("1234456787"));
+		String[] names = parseName("Zelle Transfer Conf# 371094556; MASTANVALI KALESHA SHAIK"); 
+		logger.info("First Name: {}",names[0]);
+		logger.info("Last Name: {}",names[1]);
+	}
+	
+	public static String[] parseName(String str)
+	{
+		if(str == null || str.isEmpty())
+		{
+			return null;
+		}
+		String temp = str.substring(str.indexOf(";")+1, str.length()).trim();		
+		String[] names = temp.split(" ");
+		String fName="", lName="";
+		int i=0;
+		for(String s : names)
+		{
+			if(i==names.length-1)
+			{
+				lName = s;
+			}
+			else
+			{
+				fName = fName + s +" ";
+			}
+			i++;
+		}
+		names = new String[] {fName.trim(), lName.trim()};
+		return names;
 	}
 	
 	public static double getDouble(String s)
@@ -63,11 +94,26 @@ public class Utility {
 		name1 = name1.trim().toUpperCase().replace(" ", "");
 		name2 = name2.trim().toUpperCase().replace(" ", "");
 		
+		if("".equals(name1) || "".equals(name2))
+		{
+			return false;
+		}
+		
 		matchFound = name1.equals(name2);
 		if(matchFound)
 		{
-			logger.info("Match found");
+			//logger.info("Match found");
 		}
 		return matchFound;
+	}
+	
+	public static void printMap(Map<String, Donor> donorMap)
+	{
+		for (Map.Entry<String, Donor> entry : donorMap.entrySet()) {
+			if("reachvali@yahoo.com".equals(entry.getKey()))
+        	{
+				logger.info(entry.getKey() + ":" + entry.getValue());
+        	}	
+		}
 	}
 }

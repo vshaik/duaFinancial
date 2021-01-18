@@ -22,17 +22,23 @@ public class TaxReceipts {
 	static final String DONORBOX_FILE = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/donorbox_darululoom-austin_from_2020-01-01_to_2020-12-31_cst.csv";
 	static final String FEEL_BLESSED_FILE = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/feelingBlessed_org_a6f59bc20c289d2de30592abd2b0f0ac.csv";
 	static final String SQUARE_FILE = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/square_transactions-2020-01-01-2021-01-01.csv";
-	static final String FINAL_REPORT = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/ConsolidatedList.csv";
-	static Map<String, Donor> donorMap = new HashMap<String, Donor>();
-	static Map<String, Donor> possibleMatchMap = new HashMap<String, Donor>();
+	static final String ZELLE_FILE = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/ZelleDonations2020.csv";
+	static final String FINAL_REPORT = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/ConsolidatedList.csv";	
 	static String fullName, firstName, lastName, email, phone, address1, address2, city, state, zip;
 	static double donationAmount;
 	
 	public static void main(String[] args) {
 
-		readFromDonorBoxReport();
-		readFromFeelBlessedReport();
-		readFromSquarePos();
+		Map<String, Donor> donorMap = new HashMap<String, Donor>();
+		
+		donorMap = readFromDonorBoxReport(donorMap);
+		Utility.printMap(donorMap);
+		donorMap = readFromFeelBlessedReport(donorMap);
+		Utility.printMap(donorMap);
+		donorMap = readFromZelleReport(donorMap);
+		Utility.printMap(donorMap);
+		donorMap = readFromSquarePos(donorMap);
+		Utility.printMap(donorMap);
 		
 		// Write to a final consolidated report
 		logger.info("Map size: " + donorMap.size());
@@ -52,11 +58,13 @@ public class TaxReceipts {
 			StatefulBeanToCsvBuilder<Donor> builder = new StatefulBeanToCsvBuilder<>(writer);
 	        // StatefulBeanToCsv<Donor> beanWriter = builder.build();
 			StatefulBeanToCsv<Donor> beanWriter = builder.withMappingStrategy(mappingStrategy).build();
-
 				        
 	        List<Donor> finalList = new ArrayList<Donor>();
 			for (Map.Entry<String, Donor> entry : donorMap.entrySet()) {
-		        //logger.info(entry.getKey() + ":" + entry.getValue());
+				if("reachvali@yahoo.com".equals(entry.getKey()))
+            	{
+					logger.info(entry.getKey() + ":" + entry.getValue());
+            	}		        
 		        finalList.add(entry.getValue());
 		    }
 			
@@ -70,7 +78,7 @@ public class TaxReceipts {
 		
 	}
 	
-	public static void readFromSquarePos() 
+	public static Map<String, Donor> readFromSquarePos(Map<String, Donor> donorMap) 
 	{	
         try (CSVReader reader = new CSVReader(new FileReader(SQUARE_FILE))) {
             List<String[]> recList = reader.readAll();
@@ -101,7 +109,7 @@ public class TaxReceipts {
             		Donor temp = entry.getValue();
             		if(Utility.matchNames(donor.getFullName(), temp.getFullName()))
             		{
-            			logger.info(entry.getKey()+" -----------Match Found----------- "+donor);
+            			//logger.info(entry.getKey()+" -----------Match Found----------- "+donor);
             			temp.setDonationAmount(temp.getDonationAmount()+donor.getDonationAmount());
             			donorMap.put(entry.getKey(), temp);
             		}
@@ -113,9 +121,70 @@ public class TaxReceipts {
         {
         	e.printStackTrace();
         }
+        return donorMap;
 	}
 	
-	public static void readFromFeelBlessedReport() 
+	
+	public static Map<String, Donor> readFromZelleReport(Map<String, Donor> donorMap) 
+	{	
+        try (CSVReader reader = new CSVReader(new FileReader(ZELLE_FILE))) {
+            List<String[]> recList = reader.readAll();
+                        
+            int i=0;
+            for(String[] rec : recList)
+            {	
+            	i++;
+            	if(i==1) {
+            		continue;
+            	}
+            	
+            	fullName = rec[1];
+            	
+            	String[] names = Utility.parseName(fullName);
+            	firstName = names[0];
+            	lastName = names[1];
+            	
+            	fullName = firstName + " " + lastName; 
+            			
+            	email = rec[4];
+            	
+            	if(email == null || "".equals(email.trim()))
+            		continue;
+            	
+            	email = email.trim();
+            	
+            	donationAmount = Utility.getDouble(rec[2]);
+            	phone = null;
+            	address1 = null;
+            	address2 = null;
+            	city = null;
+            	state = null;
+            	zip = null;
+            	Donor donor = donorMap.get(email);
+            	
+            	if("reachvali@yahoo.com".equals(email))
+            	{
+            		logger.info("testing");
+            	}
+            	if(donor==null) {
+            		donor = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+            	}
+            	else {
+            		//logger.info(email+" -----------Match Found----------- "+donor);
+            		donor.setDonationAmount(donor.getDonationAmount()+donationAmount);
+            	}
+            	donorMap.put(email, donor);
+            	
+            }
+        }
+        catch(Exception e)
+        {
+        	e.printStackTrace();
+        }
+        return donorMap;
+	}
+	
+	public static Map<String, Donor> readFromFeelBlessedReport(Map<String, Donor> donorMap) 
 	{	
         try (CSVReader reader = new CSVReader(new FileReader(FEEL_BLESSED_FILE))) {
             List<String[]> recList = reader.readAll();
@@ -155,9 +224,10 @@ public class TaxReceipts {
         {
         	e.printStackTrace();
         }
+        return donorMap;
 	}
 	
-	public static void readFromDonorBoxReport() 
+	public static Map<String, Donor> readFromDonorBoxReport(Map<String, Donor> donorMap) 
 	{	
         try (CSVReader reader = new CSVReader(new FileReader(DONORBOX_FILE))) {
             List<String[]> recList = reader.readAll();
@@ -197,6 +267,7 @@ public class TaxReceipts {
         {
         	e.printStackTrace();
         }
+        return donorMap;
 	}
 	
 }
