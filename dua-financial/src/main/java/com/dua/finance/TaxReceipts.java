@@ -31,14 +31,10 @@ public class TaxReceipts {
 
 		Map<String, Donor> donorMap = new HashMap<String, Donor>();
 		
-		donorMap = readFromDonorBoxReport(donorMap);
-		Utility.printMap(donorMap);
-		donorMap = readFromFeelBlessedReport(donorMap);
-		Utility.printMap(donorMap);
-		donorMap = readFromZelleReport(donorMap);
-		Utility.printMap(donorMap);
-		donorMap = readFromSquarePos(donorMap);
-		Utility.printMap(donorMap);
+		readFromDonorBoxReport(donorMap);
+		readFromFeelBlessedReport(donorMap);
+		readFromZelleReport(donorMap);
+		readFromSquarePos(donorMap);
 		
 		// Write to a final consolidated report
 		logger.info("Map size: " + donorMap.size());
@@ -78,7 +74,7 @@ public class TaxReceipts {
 		
 	}
 	
-	public static Map<String, Donor> readFromSquarePos(Map<String, Donor> donorMap) 
+	public static void readFromSquarePos(Map<String, Donor> donorMap) 
 	{	
         try (CSVReader reader = new CSVReader(new FileReader(SQUARE_FILE))) {
             List<String[]> recList = reader.readAll();
@@ -121,11 +117,10 @@ public class TaxReceipts {
         {
         	e.printStackTrace();
         }
-        return donorMap;
 	}
 	
 	
-	public static Map<String, Donor> readFromZelleReport(Map<String, Donor> donorMap) 
+	public static void readFromZelleReport(Map<String, Donor> donorMap) 
 	{	
         try (CSVReader reader = new CSVReader(new FileReader(ZELLE_FILE))) {
             List<String[]> recList = reader.readAll();
@@ -160,19 +155,19 @@ public class TaxReceipts {
             	city = null;
             	state = null;
             	zip = null;
-            	Donor donor = donorMap.get(email);
             	
-            	if("reachvali@yahoo.com".equals(email))
-            	{
-            		logger.info("testing");
-            	}
+            	Donor donor = donorMap.get(email);            	
+            	Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+
             	if(donor==null) {
-            		donor = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+            		donor = temp;
             	}
-            	else {
-            		//logger.info(email+" -----------Match Found----------- "+donor);
+            	else
+            	{
+            		donor = Utility.syncObject(donor, temp);
             		donor.setDonationAmount(donor.getDonationAmount()+donationAmount);
             	}
+            	
             	donorMap.put(email, donor);
             	
             }
@@ -181,10 +176,9 @@ public class TaxReceipts {
         {
         	e.printStackTrace();
         }
-        return donorMap;
 	}
 	
-	public static Map<String, Donor> readFromFeelBlessedReport(Map<String, Donor> donorMap) 
+	public static void readFromFeelBlessedReport(Map<String, Donor> donorMap) 
 	{	
         try (CSVReader reader = new CSVReader(new FileReader(FEEL_BLESSED_FILE))) {
             List<String[]> recList = reader.readAll();
@@ -209,11 +203,14 @@ public class TaxReceipts {
             	state = null;
             	zip = rec[4];
             	Donor donor = donorMap.get(email);
+            	Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+
             	if(donor==null) {
-            		donor = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+            		donor = temp;
             	}
             	else
             	{
+            		donor = Utility.syncObject(donor, temp);
             		donor.setDonationAmount(donor.getDonationAmount()+donationAmount);
             	}
             	donorMap.put(email, donor);
@@ -224,10 +221,9 @@ public class TaxReceipts {
         {
         	e.printStackTrace();
         }
-        return donorMap;
 	}
 	
-	public static Map<String, Donor> readFromDonorBoxReport(Map<String, Donor> donorMap) 
+	public static void readFromDonorBoxReport(Map<String, Donor> donorMap) 
 	{	
         try (CSVReader reader = new CSVReader(new FileReader(DONORBOX_FILE))) {
             List<String[]> recList = reader.readAll();
@@ -251,14 +247,19 @@ public class TaxReceipts {
             	city = rec[19];
             	state = rec[20];
             	zip = rec[21];
+            	
             	Donor donor = donorMap.get(email);
+            	Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+
             	if(donor==null) {
-            		donor = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+            		donor = temp;
             	}
             	else
             	{
+            		donor = Utility.syncObject(donor, temp);
             		donor.setDonationAmount(donor.getDonationAmount()+donationAmount);
             	}
+            	
             	donorMap.put(email, donor);            	
             	
             }
@@ -267,7 +268,6 @@ public class TaxReceipts {
         {
         	e.printStackTrace();
         }
-        return donorMap;
 	}
 	
 }
