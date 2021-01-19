@@ -23,7 +23,7 @@ public class Donor {
 		this.address2 = Utility.getCamelCase(address2);
 		this.city = Utility.getCamelCase(city);
 		this.state = state;
-		this.zip = zip;
+		this.zip = zip;		
 		
 		if(city == null && address1 !=null)
 		{
@@ -46,48 +46,52 @@ public class Donor {
 		}
 	}
 	
-	@CsvBindByName(column = "Full Name")
+	@CsvBindByName(column = "DonorId")
 	@CsvBindByPosition(position = 0)
+	public int donorId;
+	
+	@CsvBindByName(column = "Full Name")
+	@CsvBindByPosition(position = 1)
 	public String fullName;	
 	
 	@CsvBindByName(column = "First Name")
-	@CsvBindByPosition(position = 1)
+	@CsvBindByPosition(position = 2)
 	public String firstName;
 	
 	@CsvBindByName(column = "Last Name")
-	@CsvBindByPosition(position = 2)
+	@CsvBindByPosition(position = 3)
 	public String lastName;
 	
 	@CsvBindByName(column = "Email")
-	@CsvBindByPosition(position = 3)
+	@CsvBindByPosition(position = 4)
 	public String email;
 	
 	@CsvBindByName(column = "Donation Amount")
-	@CsvBindByPosition(position = 4)
+	@CsvBindByPosition(position = 5)
 	public double donationAmount;
 	
 	@CsvBindByName(column = "Phone")
-	@CsvBindByPosition(position = 5)
+	@CsvBindByPosition(position = 6)
 	public String phone;
 	
 	@CsvBindByName(column = "Address Line1")
-	@CsvBindByPosition(position = 6)
+	@CsvBindByPosition(position = 7)
 	public String address1;
 	
 	@CsvBindByName(column = "Address Line2")
-	@CsvBindByPosition(position = 7)
+	@CsvBindByPosition(position = 8)
 	public String address2;
 	
 	@CsvBindByName(column = "City")
-	@CsvBindByPosition(position = 8)
+	@CsvBindByPosition(position = 9)
 	public String city;
 	
 	@CsvBindByName(column = "State")
-	@CsvBindByPosition(position = 9)
+	@CsvBindByPosition(position = 10)
 	public String state;
 	
 	@CsvBindByName(column = "Zip")
-	@CsvBindByPosition(position = 10)
+	@CsvBindByPosition(position = 11)
 	public String zip;
 	
 	public String getFullName() {
@@ -169,10 +173,19 @@ public class Donor {
 		this.zip = zip;
 	}
 
+	public int getDonorId() {
+		return donorId;
+	}
+
+	public void setDonorId(int donorId) {
+		this.donorId = donorId;
+	}
+
 	@Override
 	public String toString() {
-		return "Donor [fullName=" + getFullName() + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
-				+ email + ", donationAmount=" + donationAmount + ", phone=" + getPhone() + ", address1=" + address1
-				+ ", address2=" + address2 + ", city=" + city + ", state=" + state + ", zip=" + zip + "]";
+		return "Donor [fullName=" + fullName + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
+				+ email + ", donationAmount=" + donationAmount + ", phone=" + phone + ", address1=" + address1
+				+ ", address2=" + address2 + ", city=" + city + ", state=" + state + ", zip=" + zip + ", donorId="
+				+ donorId + "]";
 	}
 }

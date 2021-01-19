@@ -36,7 +36,6 @@ public class PrintReceipts {
 		List<Donor> donors = beanBuilderExample(Paths.get(FINAL_REPORT), Donor.class);
 		logger.info("Donors list size: "+donors.size());
 		String templateContent = readAllBytesJava7(RECEIPT_TEMPLATE);
-		//logger.info(templateContent);		
 		for(Donor donor : donors) {
 			String content = templateContent.replaceAll("XX-Name-XX", donor.getFullName());
 			content = content.replaceAll("XX-Amt-XX", Utility.getFormattedAmt(donor.getDonationAmount()));
@@ -44,7 +43,7 @@ public class PrintReceipts {
 			content = content.replaceAll("City: XX-2-XX", donor.getCity());
 			content = content.replaceAll("State: XX-3-XX", donor.getState());
 			content = content.replaceAll("Zip: XX-4-XX", donor.getZip());
-			Files.write(Paths.get(RECEIPT_FOLDER+"/Receipt-"+donor.getEmail()+".rtf"), content.getBytes());
+			Files.write(Paths.get(RECEIPT_FOLDER+"/DonationReceipt-"+donor.getDonorId()+".rtf"), content.getBytes());
 		}
 	}
 	

@@ -47,7 +47,7 @@ public class TaxReceipts {
 	        // Set mappingStrategy type to Donor Type
 	        mappingStrategy.setType(Donor.class);
 	        // Fields in Donor Bean
-	        String[] columns = new String[] { "Full Name", "First Name", "Last Name", "Email", "Donation Amount", "Phone", "Address Line1", "Address Line2", "City", "State", "Zip" };
+	        String[] columns = new String[] {"DonorId", "Full Name", "First Name", "Last Name", "Email", "Donation Amount", "Phone", "Address Line1", "Address Line2", "City", "State", "Zip" };
 	        // Setting the columns for mappingStrategy
 	        mappingStrategy.setColumnMapping(columns);
 			
@@ -56,12 +56,12 @@ public class TaxReceipts {
 			StatefulBeanToCsv<Donor> beanWriter = builder.withMappingStrategy(mappingStrategy).build();
 				        
 	        List<Donor> finalList = new ArrayList<Donor>();
+	        int counter = 0;
 			for (Map.Entry<String, Donor> entry : donorMap.entrySet()) {
-				if("reachvali@yahoo.com".equals(entry.getKey()))
-            	{
-					logger.info(entry.getKey() + ":" + entry.getValue());
-            	}		        
-		        finalList.add(entry.getValue());
+				counter++;
+				Donor donor = entry.getValue();
+				donor.setDonorId(counter);
+		        finalList.add(donor);
 		    }
 			
 			beanWriter.write(finalList);

@@ -2,7 +2,10 @@ package com.dua.finance;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
@@ -23,28 +26,31 @@ import javax.mail.internet.MimeMultipart;
 
 import org.slf4j.LoggerFactory;
 
+import com.opencsv.bean.ColumnPositionMappingStrategy;
+import com.opencsv.bean.CsvToBean;
+import com.opencsv.bean.CsvToBeanBuilder;
+
 public class EmailUtility {
 
 	public static final org.slf4j.Logger logger = LoggerFactory.getLogger(EmailUtility.class);
+	static final String FINAL_REPORT = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/ConsolidatedList.csv";
 	
 public static void main(String args[])
-{	
-
-	Set<String> set = listFilesUsingJavaIO("C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/Receipts/pdf/");
+{
 	
-	List<String> list = new ArrayList<String>();
-	for (String s : set) {
-		s.substring(8,s.indexOf(".pdf"));
-	    list.add(s);
+	try {
+		List<Donor> donors = beanBuilderExample(Paths.get(FINAL_REPORT), Donor.class);		
+		sendMail(donors);
+	} catch (Exception e) {
+		e.printStackTrace();
 	}
-	
-	sendMail(list);
-	
+		
 }
 
 
-public static void sendMail(List<String> emails)
-{
+public static void sendMail(List<Donor> donors)
+{	
+
 	Properties prop = new Properties();
     prop.put("mail.smtp.host", "smtp.gmail.com");
     prop.put("mail.smtp.port", "465");
@@ -63,10 +69,9 @@ public static void sendMail(List<String> emails)
     try {
 
     	
-    	for(String email : emails)
+    	for(Donor donor : donors)
     	{
-    		//logger.info("Email - "+email);
-    		if(!"reachvali@gmail.com".equals(email))
+    		if(!"reachvali@gmail.com".equals(donor.email))
     		{
     			continue;
     		}
@@ -78,10 +83,10 @@ public static void sendMail(List<String> emails)
 	    	message.setFrom(new InternetAddress("finance@darululoomaustin.org"));
 	    	message.setSubject("Donation Receipt - Darul Uloom Austin, TX - Year 2020"); 
 	    	
-	    	message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("reachvali@gmail.com")); 
+	    	message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(donor.getEmail())); 
 	    	
 	    	MimeBodyPart attachmentPart = new MimeBodyPart();
-	    	attachmentPart.attachFile(new File("C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/Receipts/pdf/Receipt-"+email+".pdf"));
+	    	attachmentPart.attachFile(new File("C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/Receipts/pdf/DonationReceipt-"+donor.getDonorId()+".pdf"));
 	    	
 	    	Multipart multipart = new MimeMultipart();
 	    	multipart.addBodyPart(messageBodyPart);
@@ -105,6 +110,21 @@ public static Set<String> listFilesUsingJavaIO(String dir) {
       .filter(file -> !file.isDirectory())
       .map(File::getName)
       .collect(Collectors.toSet());
+}
+
+public static List<Donor> beanBuilderExample(Path path, Class clazz) throws Exception {
+    ColumnPositionMappingStrategy ms = new ColumnPositionMappingStrategy();
+    ms.setType(clazz);
+
+    Reader reader = Files.newBufferedReader(path);
+    CsvToBean cb = new CsvToBeanBuilder(reader)
+      .withType(clazz)
+      .withMappingStrategy(ms)
+      .build();
+
+   List<Donor> objects = cb.parse();
+   reader.close();
+   return objects;
 }
 	
 }
