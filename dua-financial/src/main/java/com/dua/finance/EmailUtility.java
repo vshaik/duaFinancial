@@ -70,14 +70,10 @@ public static void sendMail(List<Donor> donors)
 
     	
     	for(Donor donor : donors)
-    	{
-    		if(!"reachvali@gmail.com".equals(donor.email))
-    		{
-    			continue;
-    		}
-    		
+    	{	
 	    	BodyPart messageBodyPart = new MimeBodyPart(); 
-	    	messageBodyPart.setText("\n\n Assalamalekum, please find the attached donation receipt. \n\n Jazakallah Khair, \n\n Darul Uloom Austin, TX");
+	    	messageBodyPart.setText("\n\n Assalamalekum, please find the attached donation receipt. "
+	    			+ "\n\n If you have any questions please contact us at finance@darululoomaustin.org \n\n Jazakallah Khair, \n\n Darul Uloom Austin, TX");
 	    	
 	    	Message message = new MimeMessage(session); 
 	    	message.setFrom(new InternetAddress("finance@darululoomaustin.org"));
@@ -95,6 +91,8 @@ public static void sendMail(List<Donor> donors)
 	    	message.setContent(multipart);
 	        
 	    	Transport.send(message);
+	    	
+	    	logger.info("Sent receipt to "+donor.getEmail());
     	}
         System.out.println("Done");
 
