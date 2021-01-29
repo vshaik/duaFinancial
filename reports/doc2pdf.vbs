@@ -1,3 +1,4 @@
+'https://www.winhelponline.com/blog/how-to-batch-convert-word-documents-into-pdf-files/
 'Convert .doc or .docx to .pdf files via Send To menu
 Set fso = CreateObject("Scripting.FileSystemObject")
 For i= 0 To WScript.Arguments.Count -1

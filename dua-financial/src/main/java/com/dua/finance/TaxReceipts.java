@@ -19,11 +19,12 @@ import com.opencsv.bean.StatefulBeanToCsvBuilder;
 public class TaxReceipts {
 	
 	public static final org.slf4j.Logger logger = LoggerFactory.getLogger(TaxReceipts.class);
-	static final String DONORBOX_FILE = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/donorbox_darululoom-austin_from_2020-01-01_to_2020-12-31_cst.csv";
-	static final String FEEL_BLESSED_FILE = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/feelingBlessed_org_a6f59bc20c289d2de30592abd2b0f0ac.csv";
-	static final String SQUARE_FILE = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/square_transactions-2020-01-01-2021-01-01.csv";
-	static final String ZELLE_FILE = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/ZelleDonations2020.csv";
-	static final String FINAL_REPORT = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/ConsolidatedList.csv";	
+	static final String DONORBOX_FILE = "C:/git-repos/duaFinancial/reports/DUA-2020/donorbox_darululoom-austin_from_2020-01-01_to_2020-12-31_cst.csv";
+	static final String FEEL_BLESSED_FILE = "C:/git-repos/duaFinancial/reports/DUA-2020/feelingBlessed_org_a6f59bc20c289d2de30592abd2b0f0ac.csv";
+	static final String SQUARE_FILE = "C:/git-repos/duaFinancial/reports/DUA-2020/square_transactions-2020-01-01-2021-01-01.csv";
+	static final String ZELLE_FILE = "C:/git-repos/duaFinancial/reports/DUA-2020/ZelleDonations2020.csv";
+	static final String WELLS_FARGO_FILE = "C:/git-repos/duaFinancial/reports/DUA-2020/WellsFargo2020.csv";
+	static final String FINAL_REPORT = "C:/git-repos/duaFinancial/reports/DUA-2020/ConsolidatedList.csv";	
 	static String fullName, firstName, lastName, email, phone, address1, address2, city, state, zip;
 	static double donationAmount;
 	
@@ -31,10 +32,11 @@ public class TaxReceipts {
 
 		Map<String, Donor> donorMap = new HashMap<String, Donor>();
 		
-		readFromDonorBoxReport(donorMap);
-		readFromFeelBlessedReport(donorMap);
-		readFromZelleReport(donorMap);
-		readFromSquarePos(donorMap);
+		//readFromDonorBoxReport(donorMap);
+		//readFromFeelBlessedReport(donorMap);
+		//readFromZelleReport(donorMap);
+		//readFromSquarePos(donorMap);
+		readFromWellsFargoReport(donorMap);
 		
 		// Write to a final consolidated report
 		logger.info("Map size: " + donorMap.size());
@@ -72,6 +74,64 @@ public class TaxReceipts {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public static void readFromWellsFargoReport(Map<String, Donor> donorMap) 
+	{	
+        try (CSVReader reader = new CSVReader(new FileReader(WELLS_FARGO_FILE))) {
+            List<String[]> recList = reader.readAll();
+                        
+            int i=0;
+            for(String[] rec : recList)
+            {	
+            	i++;
+            	if(i==1) {
+            		continue;
+            	}
+            	
+            	fullName = rec[1];
+            	
+            	String[] names = Utility.parseName(fullName);
+            	firstName = names[0];
+            	lastName = names[1];
+            	
+            	fullName = firstName + " " + lastName; 
+            			
+            	email = rec[3];
+            	
+            	if(email == null || "".equals(email.trim()))
+            		continue;
+            	
+            	email = email.trim();
+            	
+            	donationAmount = Utility.getDouble(rec[2]);
+            	phone = null;
+            	address1 = null;
+            	address2 = null;
+            	city = null;
+            	state = null;
+            	zip = null;
+            	
+            	Donor donor = donorMap.get(email);            	
+            	Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+
+            	if(donor==null) {
+            		donor = temp;
+            	}
+            	else
+            	{
+            		donor = Utility.syncObject(donor, temp);
+            		donor.setDonationAmount(donor.getDonationAmount()+donationAmount);
+            	}
+            	
+            	donorMap.put(email, donor);
+            	
+            }
+        }
+        catch(Exception e)
+        {
+        	e.printStackTrace();
+        }
 	}
 	
 	public static void readFromSquarePos(Map<String, Donor> donorMap) 

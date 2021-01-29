@@ -33,7 +33,7 @@ import com.opencsv.bean.CsvToBeanBuilder;
 public class EmailUtility {
 
 	public static final org.slf4j.Logger logger = LoggerFactory.getLogger(EmailUtility.class);
-	static final String FINAL_REPORT = "C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/ConsolidatedList.csv";
+	static final String FINAL_REPORT = "C:/git-repos/duaFinancial/reports/DUA-2020/ConsolidatedList.csv";
 	
 public static void main(String args[])
 {
@@ -82,7 +82,7 @@ public static void sendMail(List<Donor> donors)
 	    	message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(donor.getEmail())); 
 	    	
 	    	MimeBodyPart attachmentPart = new MimeBodyPart();
-	    	attachmentPart.attachFile(new File("C:/Work/Personal/GIT-Repos/duaFinancial/reports/DUA-2020/Receipts/pdf/DonationReceipt-"+donor.getDonorId()+".pdf"));
+	    	attachmentPart.attachFile(new File("C:/git-repos/duaFinancial/reports/DUA-2020/Receipts/pdf/DonationReceipt-"+donor.getDonorId()+".pdf"));
 	    	
 	    	Multipart multipart = new MimeMultipart();
 	    	multipart.addBodyPart(messageBodyPart);

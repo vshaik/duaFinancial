@@ -142,7 +142,7 @@ public class Donor {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getAddress1() {
+	public String getAddress1() {		
 		return address1;
 	}
 	public void setAddress1(String address1) {
