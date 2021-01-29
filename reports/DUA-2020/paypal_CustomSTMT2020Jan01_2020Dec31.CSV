@@ -1,93 +1,93 @@
-"Date","Time","Time Zone","Description","Currency","Gross","Fee","Net","Balance","Transaction ID","From Email Address","Name","Bank Name","Bank Account","Shipping and Handling Amount","Sales Tax","Invoice ID","Reference Txn ID"
-"1/2/2020","05:58:12","America/Chicago","Subscription Payment","USD","125.00","-3.05","121.95","2,323.13","80965026N55876329","maqsoodjoyo@gmail.com","maqsood joyo","","","0.00","0.00","","I-0KG0RKMY8KDP"
-"1/9/2020","04:23:01","America/Chicago","Subscription Payment","USD","50.00","-1.40","48.60","2,371.73","6PE36542F5713833J","alisaeb2005@yahoo.com","Ali Hamodi","","","0.00","0.00","3842029","I-937TS0VJ1GHS"
-"1/22/2020","05:47:12","America/Chicago","Subscription Payment","USD","100.00","-2.50","97.50","2,469.23","2A998775W69927131","elhabrriad@gmail.com","Riad El-Habr","","","0.00","0.00","","I-5WRGBTD2M4FN"
-"1/31/2020","05:14:30","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","2,520.01","06824359PC657572J","utanveer@gmail.com","U T","","","0.00","0.00","2815572","I-J53W56555UKV"
-"2/2/2020","05:04:28","America/Chicago","Subscription Payment","USD","125.00","-3.05","121.95","2,641.96","9E150590LM912042C","maqsoodjoyo@gmail.com","maqsood joyo","","","0.00","0.00","","I-0KG0RKMY8KDP"
-"2/9/2020","07:58:51","America/Chicago","Subscription Payment","USD","50.00","-1.40","48.60","2,690.56","6M1740640W711054U","alisaeb2005@yahoo.com","Ali Hamodi","","","0.00","0.00","3842029","I-937TS0VJ1GHS"
-"2/22/2020","04:32:59","America/Chicago","Subscription Payment","USD","100.00","-2.50","97.50","2,788.06","2FV052399N799404N","elhabrriad@gmail.com","Riad El-Habr","","","0.00","0.00","","I-5WRGBTD2M4FN"
-"2/25/2020","19:31:57","America/Chicago","Mass Pay Payment","USD","6.00","0.00","6.00","2,794.06","81460755VG894453B","PPGFUSPay@paypalgivingfund.org","PayPal Giving Fund","","","0.00","0.00","",""
-"2/29/2020","04:52:00","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","2,844.84","53A16892CN215624N","usman.tanveer@hotmail.com","U T","","","0.00","0.00","2815572","I-J53W56555UKV"
-"3/2/2020","04:51:10","America/Chicago","Subscription Payment","USD","125.00","-3.05","121.95","2,966.79","4JG86908Y65749423","maqsoodjoyo@gmail.com","maqsood joyo","","","0.00","0.00","","I-0KG0RKMY8KDP"
-"3/5/2020","19:44:56","America/Chicago","Payment Refund","USD","-125.00","2.75","-122.25","2,844.54","1EV42670728655451","maqsoodjoyo@gmail.com","maqsood joyo","","","0.00","0.00","","4JG86908Y65749423"
-"3/5/2020","19:45:44","America/Chicago","Payment Refund","USD","-125.00","2.75","-122.25","2,722.29","27R36435XB0654712","maqsoodjoyo@gmail.com","maqsood joyo","","","0.00","0.00","","9E150590LM912042C"
-"3/5/2020","19:46:11","America/Chicago","Payment Refund","USD","-125.00","2.75","-122.25","2,600.04","8EU87705KK8573306","maqsoodjoyo@gmail.com","maqsood joyo","","","0.00","0.00","","80965026N55876329"
-"3/5/2020","19:48:34","America/Chicago","Payment Refund","USD","-125.00","2.75","-122.25","2,477.79","5PE45664J70073934","maqsoodjoyo@gmail.com","maqsood joyo","","","0.00","0.00","","5TW35676X02831001"
-"3/9/2020","07:39:33","America/Chicago","Subscription Payment","USD","50.00","-1.40","48.60","2,526.39","86D22422WG560284V","alisaeb2005@yahoo.com","Ali Hamodi","","","0.00","0.00","3842029","I-937TS0VJ1GHS"
-"3/22/2020","07:16:35","America/Chicago","Subscription Payment","USD","100.00","-2.50","97.50","2,623.89","16F52981FY195753D","elhabrriad@gmail.com","Riad El-Habr","","","0.00","0.00","","I-5WRGBTD2M4FN"
-"3/22/2020","21:28:38","America/Chicago","Express Checkout Payment","USD","300.00","-6.90","293.10","2,916.99","70M722764F4433919","naltaf@us.ibm.com","Naeem Altaf","","","0.00","0.00","5340342","O-9M877262VF0033516"
-"3/31/2020","06:14:14","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","2,967.77","9WW45431HP0489737","usman.tanveer@hotmail.com","Usman Tanveer","","","0.00","0.00","2815572","I-J53W56555UKV"
-"4/8/2020","15:28:11","America/Chicago","Express Checkout Payment","USD","300.00","-6.90","293.10","3,260.87","0XT69892561275250","naltaf@us.ibm.com","Naeem Altaf","","","0.00","0.00","5601762","O-9YX97752N9860932A"
-"4/9/2020","05:14:41","America/Chicago","Subscription Payment","USD","50.00","-1.40","48.60","3,309.47","38B90226EX1497201","alisaeb2005@yahoo.com","Ali Hamodi","","","0.00","0.00","3842029","I-937TS0VJ1GHS"
-"4/22/2020","06:49:13","America/Chicago","Subscription Payment","USD","100.00","-2.50","97.50","3,406.97","65K491357B578341F","elhabrriad@gmail.com","Riad El-Habr","","","0.00","0.00","","I-5WRGBTD2M4FN"
-"4/24/2020","19:20:52","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","3,457.75","6XP422925H029931A","jtayyab22@gmail.com","Syed Tayyab","","","0.00","0.00","5849498","I-A6K1BVE4T240"
-"4/25/2020","16:40:04","America/Chicago","Express Checkout Payment","USD","3,000.00","-66.30","2,933.70","6,391.45","2SG80684UG397163C","kidneysokc@hotmail.com","abdul khan","","","0.00","0.00","5862764","O-5YW00585PG543425N"
-"4/30/2020","05:28:52","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","6,442.23","70M64140UF711251A","usman.tanveer@hotmail.com","Usman Tanveer","","","0.00","0.00","2815572","I-J53W56555UKV"
-"5/2/2020","17:34:24","America/Chicago","Express Checkout Payment","USD","200.00","-4.70","195.30","6,637.53","758746752B085081L","junaidgmail-inv@yahoo.com","Junaid Ghaffar","","","0.00","0.00","5987478","O-43U12906T23433434"
-"5/2/2020","17:56:51","America/Chicago","Express Checkout Payment","USD","1,000.00","-22.30","977.70","7,615.23","7SE11740LG439654P","araufa@hotmail.com","Amir rauf","","","0.00","0.00","5987617","O-8VJ951947H219662V"
-"5/7/2020","21:16:40","America/Chicago","Express Checkout Payment","USD","300.00","-6.90","293.10","7,908.33","1LV33603M2006444X","naltaf@us.ibm.com","Naeem Altaf","","","0.00","0.00","6092775","O-0GW06552927920514"
-"5/8/2020","23:56:03","America/Chicago","Express Checkout Payment","USD","300.00","-6.90","293.10","8,201.43","1XR56084N29857724","reachvali@gmail.com","mastanvali shaik","","","0.00","0.00","6109995","O-4PF648037T858293M"
-"5/9/2020","06:12:31","America/Chicago","Subscription Payment","USD","50.00","-1.40","48.60","8,250.03","5RD250587J040264P","alisaeb2005@yahoo.com","Ali Hamodi","","","0.00","0.00","3842029","I-937TS0VJ1GHS"
-"5/10/2020","11:48:29","America/Chicago","Express Checkout Payment","USD","50.00","-1.40","48.60","8,298.63","45Y23475M4135245L","murshid@yahoo.com","Murshid Mustafa","","","0.00","0.00","6133129","O-9PW18907JC436751H"
-"5/14/2020","05:16:41","America/Chicago","Donation Payment","USD","25.00","-0.85","24.15","8,322.78","8ED36622WW159241U","junayd.gerald@gmail.com","Gerald Oliver","","","0.00","0.00","",""
-"5/15/2020","16:51:39","America/Chicago","Express Checkout Payment","USD","100.00","-2.50","97.50","8,420.28","57D94160FD764552P","sailes39@hotmail.com","Syed Elias","","","0.00","0.00","6216707","O-0VY374191F943800U"
-"5/16/2020","21:31:36","America/Chicago","Express Checkout Payment","USD","25.00","-0.85","24.15","8,444.43","6G728137T8198712C","nyoosufani1@gmail.com","nazish yoosufani","","","0.00","0.00","6234950","O-2R724158TG222204L"
-"5/19/2020","05:57:03","America/Chicago","Express Checkout Payment","USD","1,038.73","-23.15","1,015.58","9,460.01","1B694580G7856774A","aghauri@yahoo.com","Arshad Ghauri","","","0.00","0.00","6273911","O-51V58182S53827148"
-"5/19/2020","15:21:45","America/Chicago","Express Checkout Payment","USD","208.00","-4.88","203.12","9,663.13","373319791A4692239","hameed.sheik@gmail.com","Sheik Abdulhameed","","","0.00","0.00","6285840","O-3WE741060L868610F"
-"5/20/2020","02:57:32","America/Chicago","Express Checkout Payment","USD","50.00","-1.40","48.60","9,711.73","2WY14068DB672850S","zermoumia@yahoo.com","Younes Rahhali","","","0.00","0.00","6294999","O-6N9380152U399713S"
-"5/20/2020","06:25:03","America/Chicago","Express Checkout Payment","USD","311.84","-7.16","304.68","10,016.41","6D282549VB930340S","zohaib_haq@yahoo.com","Mohammad Ulhaq","","","0.00","0.00","6297364","O-8DW421946F377613K"
-"5/20/2020","16:35:45","America/Chicago","Express Checkout Payment","USD","1,000.00","-22.30","977.70","10,994.11","1CK49953DL058162X","thesuhail@gmail.com","Suhail Ahmed","","","0.00","0.00","6310097","O-46K98189YJ1777021"
-"5/22/2020","02:44:52","America/Chicago","Express Checkout Payment","USD","200.00","-4.70","195.30","11,189.41","0VE17887GW005915W","babu_mohammed@yahoo.com","Babu Mohammed","","","0.00","0.00","6338561","O-1T684993267338646"
-"5/22/2020","06:14:45","America/Chicago","Subscription Payment","USD","100.00","-2.50","97.50","11,286.91","2S1712163M097452T","elhabrriad@gmail.com","Riad El-Habr","","","0.00","0.00","","I-5WRGBTD2M4FN"
-"5/22/2020","14:18:58","America/Chicago","Express Checkout Payment","USD","2,000.00","-44.30","1,955.70","13,242.61","4EJ68462H04910709","salimuc@gmail.com","Salim Chowdhury","","","0.00","0.00","6350849","O-8BU770212E220645K"
-"5/22/2020","16:33:26","America/Chicago","Express Checkout Payment","USD","208.00","-4.88","203.12","13,445.73","2X042341WP0424235","aghauri@yahoo.com","Arshad Ghauri","","","0.00","0.00","6352516","O-39M29649LC879870J"
-"5/24/2020","06:07:22","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","13,496.51","5XV97083HT1044048","jtayyab22@gmail.com","Syed Tayyab","","","0.00","0.00","5849498","I-A6K1BVE4T240"
-"5/31/2020","05:50:15","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","13,547.29","17M76130W4683360T","usman.tanveer@hotmail.com","Usman Tanveer","","","0.00","0.00","2815572","I-J53W56555UKV"
-"6/1/2020","10:41:31","America/Chicago","Website Payment","USD","300.00","-6.90","293.10","13,840.39","02A895813R105473X","malik.s.ammar@gmail.com","Malik Ammar","","","0.00","0.00","10393889",""
-"6/1/2020","23:09:31","America/Chicago","Website Payment","USD","400.00","-9.10","390.90","14,231.29","3MU18892VS082241R","alampatwary@gmail.com","Alamo Fun Company","","","0.00","0.00","10396834",""
-"6/1/2020","23:58:16","America/Chicago","Website Payment","USD","300.00","-6.90","293.10","14,524.39","48344969XL405944L","asifoddin.shaik@rediffmail.com","ASIFODDIN SHAIK","","","0.00","0.00","10396894",""
-"6/6/2020","12:16:17","America/Chicago","Website Payment","USD","300.00","-6.90","293.10","14,817.49","8EA00539193154521","Garba.ibrahima@gmail.com","Ibrahima Garba","","","0.00","0.00","10427046",""
-"6/9/2020","05:23:33","America/Chicago","Subscription Payment","USD","50.00","-1.40","48.60","14,866.09","2PL04446AA9808532","alisaeb2005@yahoo.com","Ali Hamodi","","","0.00","0.00","3842029","I-937TS0VJ1GHS"
-"6/19/2020","13:50:39","America/Chicago","Website Payment","USD","300.00","-6.90","293.10","15,159.19","89653572T8133723W","hyd.hunk18@gmail.com","Mohammed Haq","","","0.00","0.00","10530868",""
-"6/22/2020","06:15:16","America/Chicago","Subscription Payment","USD","100.00","-2.50","97.50","15,256.69","9YK16053L58429432","elhabrriad@gmail.com","Riad El-Habr","","","0.00","0.00","","I-5WRGBTD2M4FN"
-"6/24/2020","07:43:23","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","15,307.47","74C5632128307252U","jtayyab22@gmail.com","Syed Tayyab","","","0.00","0.00","5849498","I-A6K1BVE4T240"
-"6/25/2020","14:48:34","America/Chicago","Mass Pay Payment","USD","17.00","0.00","17.00","15,324.47","3UC41057XG8359120","PPGFUSPay@paypalgivingfund.org","PayPal Giving Fund","","","0.00","0.00","",""
-"6/30/2020","05:08:18","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","15,375.25","4MG45622XE517403U","usman.tanveer@hotmail.com","Usman Tanveer","","","0.00","0.00","2815572","I-J53W56555UKV"
-"7/7/2020","01:15:58","America/Chicago","Express Checkout Payment","USD","52.23","-1.45","50.78","15,426.03","3W565786U46607513","umariyoob@gmail.com","Mohamed Iyoob Umar","","","0.00","0.00","7341090","O-48S02734S12521301"
-"7/7/2020","01:15:58","America/Chicago","Partner Fee","USD","-0.78","0.00","-0.78","15,425.25","2HD76187W57626343","","","","","0.00","0.00","7341090","3W565786U46607513"
-"7/9/2020","06:24:56","America/Chicago","Subscription Payment","USD","50.00","-1.40","48.60","15,473.85","270994466H526131X","alisaeb2005@yahoo.com","Ali Hamodi","","","0.00","0.00","3842029","I-937TS0VJ1GHS"
-"7/14/2020","17:52:24","America/Chicago","General Withdrawal - Bank Account","USD","-5,473.85","0.00","-5,473.85","10,000.00","3LY19582WD4254205","","","BANK OF AMERICA, N.A.","6754","0.00","0.00","",""
-"7/22/2020","06:46:05","America/Chicago","Subscription Payment","USD","100.00","-2.50","97.50","10,097.50","5US69205RD143044N","elhabrriad@gmail.com","Riad El-Habr","","","0.00","0.00","","I-5WRGBTD2M4FN"
-"7/24/2020","06:34:18","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","10,148.28","7UU90490RJ539593M","jtayyab22@gmail.com","Syed Tayyab","","","0.00","0.00","5849498","I-A6K1BVE4T240"
-"7/31/2020","05:44:44","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","10,199.06","9NR53132CD390784N","usman.tanveer@hotmail.com","Usman Tanveer","","","0.00","0.00","2815572","I-J53W56555UKV"
-"8/9/2020","05:57:18","America/Chicago","Subscription Payment","USD","50.00","-1.40","48.60","10,247.66","6V488701FU017811D","alisaeb2005@yahoo.com","Ali Hamodi","","","0.00","0.00","3842029","I-937TS0VJ1GHS"
-"8/15/2020","15:19:51","America/Chicago","Express Checkout Payment","USD","52.23","-1.45","50.78","10,298.44","7L046364756236744","hbrashid@gmail.com","Hassan Rashid","","","0.00","0.00","7933310","O-49K96166FJ346331K"
-"8/15/2020","15:19:51","America/Chicago","Partner Fee","USD","-0.78","0.00","-0.78","10,297.66","4XH224359G047093K","","","","","0.00","0.00","7933310","7L046364756236744"
-"8/17/2020","16:16:48","America/Chicago","General Withdrawal - Bank Account","USD","-10,297.66","0.00","-10,297.66","0.00","5X837349AP8173359","","","BANK OF AMERICA, N.A.","6754","0.00","0.00","",""
-"8/22/2020","06:59:33","America/Chicago","Subscription Payment","USD","100.00","-2.50","97.50","97.50","59F28912TP3481059","elhabrriad@gmail.com","Riad El-Habr","","","0.00","0.00","","I-5WRGBTD2M4FN"
-"8/24/2020","05:39:48","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","148.28","73D19781UN705142G","jtayyab22@gmail.com","Syed Tayyab","","","0.00","0.00","5849498","I-A6K1BVE4T240"
-"8/25/2020","11:49:01","America/Chicago","Mass Pay Payment","USD","1.00","0.00","1.00","149.28","32W338834L871800X","PPGFUSPay@paypalgivingfund.org","PayPal Giving Fund","","","0.00","0.00","",""
-"8/31/2020","06:22:46","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","200.06","2A6451298W4559423","usman.tanveer@hotmail.com","Usman Tanveer","","","0.00","0.00","2815572","I-J53W56555UKV"
-"9/8/2020","22:01:56","America/Chicago","Website Payment","USD","200.00","-4.70","195.30","395.36","5B018890DN3211311","alampatwary@gmail.com","Alamo Fun Company","","","0.00","0.00","11222930",""
-"9/8/2020","22:13:46","America/Chicago","Website Payment","USD","200.00","-4.70","195.30","590.66","0G7547148H043814K","alampatwary@gmail.com","Alamo Fun Company","","","0.00","0.00","11222988",""
-"9/8/2020","22:21:35","America/Chicago","Website Payment","USD","200.00","-4.70","195.30","785.96","41779859S6009453M","alampatwary@gmail.com","Alamo Fun Company","","","0.00","0.00","11223024",""
-"9/9/2020","06:20:22","America/Chicago","Subscription Payment","USD","50.00","-1.40","48.60","834.56","5FR46391CE197092T","alisaeb2005@yahoo.com","Ali Hamodi","","","0.00","0.00","3842029","I-937TS0VJ1GHS"
-"9/19/2020","10:52:27","America/Chicago","Website Payment","USD","400.00","-9.10","390.90","1,225.46","3K9546177V812003C","Garba.ibrahima@gmail.com","Ibrahima Garba","","","0.00","0.00","11351312",""
-"9/19/2020","10:54:59","America/Chicago","Website Payment","USD","400.00","-9.10","390.90","1,616.36","37H31843JW364354Y","Garba.ibrahima@gmail.com","Ibrahima Garba","","","0.00","0.00","11351352",""
-"9/22/2020","06:48:26","America/Chicago","Subscription Payment","USD","100.00","-2.50","97.50","1,713.86","3Y7120146J086642X","elhabrriad@gmail.com","Riad El-Habr","","","0.00","0.00","","I-5WRGBTD2M4FN"
-"9/24/2020","05:37:18","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","1,764.64","4DT96455LL078101T","jtayyab22@gmail.com","Syed Tayyab","","","0.00","0.00","5849498","I-A6K1BVE4T240"
-"9/30/2020","07:41:40","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","1,815.42","63796059T87475443","usman.tanveer@hotmail.com","Usman Tanveer","","","0.00","0.00","2815572","I-J53W56555UKV"
-"10/1/2020","10:47:37","America/Chicago","Express Checkout Payment","USD","100.00","-2.50","97.50","1,912.92","17110709J5467643W","alisaeb2005@yahoo.com","Ali Hamodi","","","0.00","0.00","8737180","O-9JB403691C594471W"
-"10/1/2020","10:47:37","America/Chicago","Partner Fee","USD","-1.50","0.00","-1.50","1,911.42","9AU89902NM078384J","","","","","0.00","0.00","8737180","17110709J5467643W"
-"10/9/2020","05:17:25","America/Chicago","Subscription Payment","USD","50.00","-1.40","48.60","1,960.02","84A64317X5215174A","alisaeb2005@yahoo.com","Ali Hamodi","","","0.00","0.00","3842029","I-937TS0VJ1GHS"
-"10/22/2020","07:10:16","America/Chicago","Subscription Payment","USD","100.00","-2.50","97.50","2,057.52","73D794110D229933U","elhabrriad@gmail.com","Riad El-Habr","","","0.00","0.00","","I-5WRGBTD2M4FN"
-"10/24/2020","07:10:49","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","2,108.30","27V73935RJ530503G","jtayyab22@gmail.com","Syed Tayyab","","","0.00","0.00","5849498","I-A6K1BVE4T240"
-"10/31/2020","06:46:37","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","2,159.08","1RG75543KG075745F","usman.tanveer@hotmail.com","Usman Tanveer","","","0.00","0.00","2815572","I-J53W56555UKV"
-"11/9/2020","07:58:25","America/Chicago","Subscription Payment","USD","50.00","-1.40","48.60","2,207.68","7HF36575KH427044W","alisaeb2005@yahoo.com","Ali Hamodi","","","0.00","0.00","3842029","I-937TS0VJ1GHS"
-"11/22/2020","05:04:13","America/Chicago","Subscription Payment","USD","100.00","-2.50","97.50","2,305.18","7BM43531KS204643H","elhabrriad@gmail.com","Riad El-Habr","","","0.00","0.00","","I-5WRGBTD2M4FN"
-"11/24/2020","06:03:18","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","2,355.96","3JD341811J0946034","jtayyab22@gmail.com","Syed Tayyab","","","0.00","0.00","5849498","I-A6K1BVE4T240"
-"11/30/2020","06:33:29","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","2,406.74","98G48810PS8926526","usman.tanveer@hotmail.com","Usman Tanveer","","","0.00","0.00","2815572","I-J53W56555UKV"
-"12/9/2020","05:49:58","America/Chicago","Subscription Payment","USD","50.00","-1.40","48.60","2,455.34","5VC68897N5065090D","ali.tech80@gmail.com","Ali Hamodi","","","0.00","0.00","3842029","I-937TS0VJ1GHS"
-"12/22/2020","04:38:40","America/Chicago","Subscription Payment","USD","100.00","-2.50","97.50","2,552.84","46G14277L55793806","elhabrriad@gmail.com","Riad El-Habr","","","0.00","0.00","","I-5WRGBTD2M4FN"
-"12/24/2020","05:46:30","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","2,603.62","95D5785034629782N","jtayyab22@gmail.com","Syed Tayyab","","","0.00","0.00","5849498","I-A6K1BVE4T240"
-"12/31/2020","05:17:47","America/Chicago","Subscription Payment","USD","52.23","-1.45","50.78","2,654.40","6VL531707X0525122","usman.tanveer@hotmail.com","Usman Tanveer","","","0.00","0.00","2815572","I-J53W56555UKV"
+Date,Time,Time Zone,Description,Currency,Gross,Fee,Net,Balance,Transaction ID,From Email Address,Name,Bank Name,Bank Account,Shipping and Handling Amount,Sales Tax,Invoice ID,Reference Txn ID
+1/2/2020,5:58:12,America/Chicago,Subscription Payment,USD,125,-3.05,121.95,"2,323.13",80965026N55876329,maqsoodjoyo@gmail.com,maqsood joyo,,,0,0,,I-0KG0RKMY8KDP
+1/9/2020,4:23:01,America/Chicago,Subscription Payment,USD,50,-1.4,48.6,"2,371.73",6PE36542F5713833J,alisaeb2005@yahoo.com,Ali Hamodi,,,0,0,3842029,I-937TS0VJ1GHS
+1/22/2020,5:47:12,America/Chicago,Subscription Payment,USD,100,-2.5,97.5,"2,469.23",2A998775W69927131,elhabrriad@gmail.com,Riad El-Habr,,,0,0,,I-5WRGBTD2M4FN
+1/31/2020,5:14:30,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"2,520.01",06824359PC657572J,utanveer@gmail.com,U T,,,0,0,2815572,I-J53W56555UKV
+2/2/2020,5:04:28,America/Chicago,Subscription Payment,USD,125,-3.05,121.95,"2,641.96",9E150590LM912042C,maqsoodjoyo@gmail.com,maqsood joyo,,,0,0,,I-0KG0RKMY8KDP
+2/9/2020,7:58:51,America/Chicago,Subscription Payment,USD,50,-1.4,48.6,"2,690.56",6M1740640W711054U,alisaeb2005@yahoo.com,Ali Hamodi,,,0,0,3842029,I-937TS0VJ1GHS
+2/22/2020,4:32:59,America/Chicago,Subscription Payment,USD,100,-2.5,97.5,"2,788.06",2FV052399N799404N,elhabrriad@gmail.com,Riad El-Habr,,,0,0,,I-5WRGBTD2M4FN
+2/25/2020,19:31:57,America/Chicago,Mass Pay Payment,USD,6,0,6,"2,794.06",81460755VG894453B,PPGFUSPay@paypalgivingfund.org,PayPal Giving Fund,,,0,0,,
+2/29/2020,4:52:00,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"2,844.84",53A16892CN215624N,usman.tanveer@hotmail.com,U T,,,0,0,2815572,I-J53W56555UKV
+3/2/2020,4:51:10,America/Chicago,Subscription Payment,USD,125,-3.05,121.95,"2,966.79",4JG86908Y65749423,maqsoodjoyo@gmail.com,maqsood joyo,,,0,0,,I-0KG0RKMY8KDP
+3/5/2020,19:44:56,America/Chicago,Payment Refund,USD,-125,2.75,-122.25,"2,844.54",1EV42670728655451,maqsoodjoyo@gmail.com,maqsood joyo,,,0,0,,4JG86908Y65749423
+3/5/2020,19:45:44,America/Chicago,Payment Refund,USD,-125,2.75,-122.25,"2,722.29",27R36435XB0654712,maqsoodjoyo@gmail.com,maqsood joyo,,,0,0,,9E150590LM912042C
+3/5/2020,19:46:11,America/Chicago,Payment Refund,USD,-125,2.75,-122.25,"2,600.04",8EU87705KK8573306,maqsoodjoyo@gmail.com,maqsood joyo,,,0,0,,80965026N55876329
+3/5/2020,19:48:34,America/Chicago,Payment Refund,USD,-125,2.75,-122.25,"2,477.79",5PE45664J70073934,maqsoodjoyo@gmail.com,maqsood joyo,,,0,0,,5TW35676X02831001
+3/9/2020,7:39:33,America/Chicago,Subscription Payment,USD,50,-1.4,48.6,"2,526.39",86D22422WG560284V,alisaeb2005@yahoo.com,Ali Hamodi,,,0,0,3842029,I-937TS0VJ1GHS
+3/22/2020,7:16:35,America/Chicago,Subscription Payment,USD,100,-2.5,97.5,"2,623.89",16F52981FY195753D,elhabrriad@gmail.com,Riad El-Habr,,,0,0,,I-5WRGBTD2M4FN
+3/22/2020,21:28:38,America/Chicago,Express Checkout Payment,USD,300,-6.9,293.1,"2,916.99",70M722764F4433919,naltaf@us.ibm.com,Naeem Altaf,,,0,0,5340342,O-9M877262VF0033516
+3/31/2020,6:14:14,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"2,967.77",9WW45431HP0489737,usman.tanveer@hotmail.com,Usman Tanveer,,,0,0,2815572,I-J53W56555UKV
+4/8/2020,15:28:11,America/Chicago,Express Checkout Payment,USD,300,-6.9,293.1,"3,260.87",0XT69892561275250,naltaf@us.ibm.com,Naeem Altaf,,,0,0,5601762,O-9YX97752N9860932A
+4/9/2020,5:14:41,America/Chicago,Subscription Payment,USD,50,-1.4,48.6,"3,309.47",38B90226EX1497201,alisaeb2005@yahoo.com,Ali Hamodi,,,0,0,3842029,I-937TS0VJ1GHS
+4/22/2020,6:49:13,America/Chicago,Subscription Payment,USD,100,-2.5,97.5,"3,406.97",65K491357B578341F,elhabrriad@gmail.com,Riad El-Habr,,,0,0,,I-5WRGBTD2M4FN
+4/24/2020,19:20:52,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"3,457.75",6XP422925H029931A,jtayyab22@gmail.com,Syed Tayyab,,,0,0,5849498,I-A6K1BVE4T240
+4/25/2020,16:40:04,America/Chicago,Express Checkout Payment,USD,"3,000.00",-66.3,"2,933.70","6,391.45",2SG80684UG397163C,kidneysokc@hotmail.com,abdul khan,,,0,0,5862764,O-5YW00585PG543425N
+4/30/2020,5:28:52,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"6,442.23",70M64140UF711251A,usman.tanveer@hotmail.com,Usman Tanveer,,,0,0,2815572,I-J53W56555UKV
+5/2/2020,17:34:24,America/Chicago,Express Checkout Payment,USD,200,-4.7,195.3,"6,637.53",758746752B085081L,junaidgmail-inv@yahoo.com,Junaid Ghaffar,,,0,0,5987478,O-43U12906T23433434
+5/2/2020,17:56:51,America/Chicago,Express Checkout Payment,USD,"1,000.00",-22.3,977.7,"7,615.23",7SE11740LG439654P,araufa@hotmail.com,Amir rauf,,,0,0,5987617,O-8VJ951947H219662V
+5/7/2020,21:16:40,America/Chicago,Express Checkout Payment,USD,300,-6.9,293.1,"7,908.33",1LV33603M2006444X,naltaf@us.ibm.com,Naeem Altaf,,,0,0,6092775,O-0GW06552927920514
+5/8/2020,23:56:03,America/Chicago,Express Checkout Payment,USD,300,-6.9,293.1,"8,201.43",1XR56084N29857724,reachvali@gmail.com,mastanvali shaik,,,0,0,6109995,O-4PF648037T858293M
+5/9/2020,6:12:31,America/Chicago,Subscription Payment,USD,50,-1.4,48.6,"8,250.03",5RD250587J040264P,alisaeb2005@yahoo.com,Ali Hamodi,,,0,0,3842029,I-937TS0VJ1GHS
+5/10/2020,11:48:29,America/Chicago,Express Checkout Payment,USD,50,-1.4,48.6,"8,298.63",45Y23475M4135245L,murshid@yahoo.com,Murshid Mustafa,,,0,0,6133129,O-9PW18907JC436751H
+5/14/2020,5:16:41,America/Chicago,Donation Payment,USD,25,-0.85,24.15,"8,322.78",8ED36622WW159241U,junayd.gerald@gmail.com,Gerald Oliver,,,0,0,,
+5/15/2020,16:51:39,America/Chicago,Express Checkout Payment,USD,100,-2.5,97.5,"8,420.28",57D94160FD764552P,sailes39@hotmail.com,Syed Elias,,,0,0,6216707,O-0VY374191F943800U
+5/16/2020,21:31:36,America/Chicago,Express Checkout Payment,USD,25,-0.85,24.15,"8,444.43",6G728137T8198712C,nyoosufani1@gmail.com,nazish yoosufani,,,0,0,6234950,O-2R724158TG222204L
+5/19/2020,5:57:03,America/Chicago,Express Checkout Payment,USD,"1,038.73",-23.15,"1,015.58","9,460.01",1B694580G7856774A,aghauri@yahoo.com,Arshad Ghauri,,,0,0,6273911,O-51V58182S53827148
+5/19/2020,15:21:45,America/Chicago,Express Checkout Payment,USD,208,-4.88,203.12,"9,663.13",373319791A4692239,hameed.sheik@gmail.com,Sheik Abdulhameed,,,0,0,6285840,O-3WE741060L868610F
+5/20/2020,2:57:32,America/Chicago,Express Checkout Payment,USD,50,-1.4,48.6,"9,711.73",2WY14068DB672850S,zermoumia@yahoo.com,Younes Rahhali,,,0,0,6294999,O-6N9380152U399713S
+5/20/2020,6:25:03,America/Chicago,Express Checkout Payment,USD,311.84,-7.16,304.68,"10,016.41",6D282549VB930340S,zohaib_haq@yahoo.com,Mohammad Ulhaq,,,0,0,6297364,O-8DW421946F377613K
+5/20/2020,16:35:45,America/Chicago,Express Checkout Payment,USD,"1,000.00",-22.3,977.7,"10,994.11",1CK49953DL058162X,thesuhail@gmail.com,Suhail Ahmed,,,0,0,6310097,O-46K98189YJ1777021
+5/22/2020,2:44:52,America/Chicago,Express Checkout Payment,USD,200,-4.7,195.3,"11,189.41",0VE17887GW005915W,babu_mohammed@yahoo.com,Babu Mohammed,,,0,0,6338561,O-1T684993267338646
+5/22/2020,6:14:45,America/Chicago,Subscription Payment,USD,100,-2.5,97.5,"11,286.91",2S1712163M097452T,elhabrriad@gmail.com,Riad El-Habr,,,0,0,,I-5WRGBTD2M4FN
+5/22/2020,14:18:58,America/Chicago,Express Checkout Payment,USD,"2,000.00",-44.3,"1,955.70","13,242.61",4EJ68462H04910709,salimuc@gmail.com,Salim Chowdhury,,,0,0,6350849,O-8BU770212E220645K
+5/22/2020,16:33:26,America/Chicago,Express Checkout Payment,USD,208,-4.88,203.12,"13,445.73",2X042341WP0424235,aghauri@yahoo.com,Arshad Ghauri,,,0,0,6352516,O-39M29649LC879870J
+5/24/2020,6:07:22,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"13,496.51",5XV97083HT1044048,jtayyab22@gmail.com,Syed Tayyab,,,0,0,5849498,I-A6K1BVE4T240
+5/31/2020,5:50:15,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"13,547.29",17M76130W4683360T,usman.tanveer@hotmail.com,Usman Tanveer,,,0,0,2815572,I-J53W56555UKV
+6/1/2020,10:41:31,America/Chicago,Website Payment,USD,300,-6.9,293.1,"13,840.39",02A895813R105473X,malik.s.ammar@gmail.com,Malik Ammar,,,0,0,10393889,
+6/1/2020,23:09:31,America/Chicago,Website Payment,USD,400,-9.1,390.9,"14,231.29",3MU18892VS082241R,alampatwary@gmail.com,Alamo Fun Company,,,0,0,10396834,
+6/1/2020,23:58:16,America/Chicago,Website Payment,USD,300,-6.9,293.1,"14,524.39",48344969XL405944L,asifoddin.shaik@rediffmail.com,ASIFODDIN SHAIK,,,0,0,10396894,
+6/6/2020,12:16:17,America/Chicago,Website Payment,USD,300,-6.9,293.1,"14,817.49",8EA00539193154521,Garba.ibrahima@gmail.com,Ibrahima Garba,,,0,0,10427046,
+6/9/2020,5:23:33,America/Chicago,Subscription Payment,USD,50,-1.4,48.6,"14,866.09",2PL04446AA9808532,alisaeb2005@yahoo.com,Ali Hamodi,,,0,0,3842029,I-937TS0VJ1GHS
+6/19/2020,13:50:39,America/Chicago,Website Payment,USD,300,-6.9,293.1,"15,159.19",89653572T8133723W,hyd.hunk18@gmail.com,Mohammed Haq,,,0,0,10530868,
+6/22/2020,6:15:16,America/Chicago,Subscription Payment,USD,100,-2.5,97.5,"15,256.69",9YK16053L58429432,elhabrriad@gmail.com,Riad El-Habr,,,0,0,,I-5WRGBTD2M4FN
+6/24/2020,7:43:23,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"15,307.47",74C5632128307252U,jtayyab22@gmail.com,Syed Tayyab,,,0,0,5849498,I-A6K1BVE4T240
+6/25/2020,14:48:34,America/Chicago,Mass Pay Payment,USD,17,0,17,"15,324.47",3UC41057XG8359120,PPGFUSPay@paypalgivingfund.org,PayPal Giving Fund,,,0,0,,
+6/30/2020,5:08:18,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"15,375.25",4MG45622XE517403U,usman.tanveer@hotmail.com,Usman Tanveer,,,0,0,2815572,I-J53W56555UKV
+7/7/2020,1:15:58,America/Chicago,Express Checkout Payment,USD,52.23,-1.45,50.78,"15,426.03",3W565786U46607513,umariyoob@gmail.com,Mohamed Iyoob Umar,,,0,0,7341090,O-48S02734S12521301
+7/7/2020,1:15:58,America/Chicago,Partner Fee,USD,-0.78,0,-0.78,"15,425.25",2HD76187W57626343,,,,,0,0,7341090,3W565786U46607513
+7/9/2020,6:24:56,America/Chicago,Subscription Payment,USD,50,-1.4,48.6,"15,473.85",270994466H526131X,alisaeb2005@yahoo.com,Ali Hamodi,,,0,0,3842029,I-937TS0VJ1GHS
+7/14/2020,17:52:24,America/Chicago,General Withdrawal - Bank Account,USD,"-5,473.85",0,"-5,473.85","10,000.00",3LY19582WD4254205,,,"BANK OF AMERICA, N.A.",6754,0,0,,
+7/22/2020,6:46:05,America/Chicago,Subscription Payment,USD,100,-2.5,97.5,"10,097.50",5US69205RD143044N,elhabrriad@gmail.com,Riad El-Habr,,,0,0,,I-5WRGBTD2M4FN
+7/24/2020,6:34:18,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"10,148.28",7UU90490RJ539593M,jtayyab22@gmail.com,Syed Tayyab,,,0,0,5849498,I-A6K1BVE4T240
+7/31/2020,5:44:44,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"10,199.06",9NR53132CD390784N,usman.tanveer@hotmail.com,Usman Tanveer,,,0,0,2815572,I-J53W56555UKV
+8/9/2020,5:57:18,America/Chicago,Subscription Payment,USD,50,-1.4,48.6,"10,247.66",6V488701FU017811D,alisaeb2005@yahoo.com,Ali Hamodi,,,0,0,3842029,I-937TS0VJ1GHS
+8/15/2020,15:19:51,America/Chicago,Express Checkout Payment,USD,52.23,-1.45,50.78,"10,298.44",7L046364756236744,hbrashid@gmail.com,Hassan Rashid,,,0,0,7933310,O-49K96166FJ346331K
+8/15/2020,15:19:51,America/Chicago,Partner Fee,USD,-0.78,0,-0.78,"10,297.66",4XH224359G047093K,,,,,0,0,7933310,7L046364756236744
+8/17/2020,16:16:48,America/Chicago,General Withdrawal - Bank Account,USD,"-10,297.66",0,"-10,297.66",0,5X837349AP8173359,,,"BANK OF AMERICA, N.A.",6754,0,0,,
+8/22/2020,6:59:33,America/Chicago,Subscription Payment,USD,100,-2.5,97.5,97.5,59F28912TP3481059,elhabrriad@gmail.com,Riad El-Habr,,,0,0,,I-5WRGBTD2M4FN
+8/24/2020,5:39:48,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,148.28,73D19781UN705142G,jtayyab22@gmail.com,Syed Tayyab,,,0,0,5849498,I-A6K1BVE4T240
+8/25/2020,11:49:01,America/Chicago,Mass Pay Payment,USD,1,0,1,149.28,32W338834L871800X,PPGFUSPay@paypalgivingfund.org,PayPal Giving Fund,,,0,0,,
+8/31/2020,6:22:46,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,200.06,2A6451298W4559423,usman.tanveer@hotmail.com,Usman Tanveer,,,0,0,2815572,I-J53W56555UKV
+9/8/2020,22:01:56,America/Chicago,Website Payment,USD,200,-4.7,195.3,395.36,5B018890DN3211311,alampatwary@gmail.com,Alamo Fun Company,,,0,0,11222930,
+9/8/2020,22:13:46,America/Chicago,Website Payment,USD,200,-4.7,195.3,590.66,0G7547148H043814K,alampatwary@gmail.com,Alamo Fun Company,,,0,0,11222988,
+9/8/2020,22:21:35,America/Chicago,Website Payment,USD,200,-4.7,195.3,785.96,41779859S6009453M,alampatwary@gmail.com,Alamo Fun Company,,,0,0,11223024,
+9/9/2020,6:20:22,America/Chicago,Subscription Payment,USD,50,-1.4,48.6,834.56,5FR46391CE197092T,alisaeb2005@yahoo.com,Ali Hamodi,,,0,0,3842029,I-937TS0VJ1GHS
+9/19/2020,10:52:27,America/Chicago,Website Payment,USD,400,-9.1,390.9,"1,225.46",3K9546177V812003C,Garba.ibrahima@gmail.com,Ibrahima Garba,,,0,0,11351312,
+9/19/2020,10:54:59,America/Chicago,Website Payment,USD,400,-9.1,390.9,"1,616.36",37H31843JW364354Y,Garba.ibrahima@gmail.com,Ibrahima Garba,,,0,0,11351352,
+9/22/2020,6:48:26,America/Chicago,Subscription Payment,USD,100,-2.5,97.5,"1,713.86",3Y7120146J086642X,elhabrriad@gmail.com,Riad El-Habr,,,0,0,,I-5WRGBTD2M4FN
+9/24/2020,5:37:18,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"1,764.64",4DT96455LL078101T,jtayyab22@gmail.com,Syed Tayyab,,,0,0,5849498,I-A6K1BVE4T240
+9/30/2020,7:41:40,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"1,815.42",63796059T87475443,usman.tanveer@hotmail.com,Usman Tanveer,,,0,0,2815572,I-J53W56555UKV
+10/1/2020,10:47:37,America/Chicago,Express Checkout Payment,USD,100,-2.5,97.5,"1,912.92",17110709J5467643W,alisaeb2005@yahoo.com,Ali Hamodi,,,0,0,8737180,O-9JB403691C594471W
+10/1/2020,10:47:37,America/Chicago,Partner Fee,USD,-1.5,0,-1.5,"1,911.42",9AU89902NM078384J,,,,,0,0,8737180,17110709J5467643W
+10/9/2020,5:17:25,America/Chicago,Subscription Payment,USD,50,-1.4,48.6,"1,960.02",84A64317X5215174A,alisaeb2005@yahoo.com,Ali Hamodi,,,0,0,3842029,I-937TS0VJ1GHS
+10/22/2020,7:10:16,America/Chicago,Subscription Payment,USD,100,-2.5,97.5,"2,057.52",73D794110D229933U,elhabrriad@gmail.com,Riad El-Habr,,,0,0,,I-5WRGBTD2M4FN
+10/24/2020,7:10:49,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"2,108.30",27V73935RJ530503G,jtayyab22@gmail.com,Syed Tayyab,,,0,0,5849498,I-A6K1BVE4T240
+10/31/2020,6:46:37,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"2,159.08",1RG75543KG075745F,usman.tanveer@hotmail.com,Usman Tanveer,,,0,0,2815572,I-J53W56555UKV
+11/9/2020,7:58:25,America/Chicago,Subscription Payment,USD,50,-1.4,48.6,"2,207.68",7HF36575KH427044W,alisaeb2005@yahoo.com,Ali Hamodi,,,0,0,3842029,I-937TS0VJ1GHS
+11/22/2020,5:04:13,America/Chicago,Subscription Payment,USD,100,-2.5,97.5,"2,305.18",7BM43531KS204643H,elhabrriad@gmail.com,Riad El-Habr,,,0,0,,I-5WRGBTD2M4FN
+11/24/2020,6:03:18,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"2,355.96",3JD341811J0946034,jtayyab22@gmail.com,Syed Tayyab,,,0,0,5849498,I-A6K1BVE4T240
+11/30/2020,6:33:29,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"2,406.74",98G48810PS8926526,usman.tanveer@hotmail.com,Usman Tanveer,,,0,0,2815572,I-J53W56555UKV
+12/9/2020,5:49:58,America/Chicago,Subscription Payment,USD,50,-1.4,48.6,"2,455.34",5VC68897N5065090D,ali.tech80@gmail.com,Ali Hamodi,,,0,0,3842029,I-937TS0VJ1GHS
+12/22/2020,4:38:40,America/Chicago,Subscription Payment,USD,100,-2.5,97.5,"2,552.84",46G14277L55793806,elhabrriad@gmail.com,Riad El-Habr,,,0,0,,I-5WRGBTD2M4FN
+12/24/2020,5:46:30,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"2,603.62",95D5785034629782N,jtayyab22@gmail.com,Syed Tayyab,,,0,0,5849498,I-A6K1BVE4T240
+12/31/2020,5:17:47,America/Chicago,Subscription Payment,USD,52.23,-1.45,50.78,"2,654.40",6VL531707X0525122,usman.tanveer@hotmail.com,Usman Tanveer,,,0,0,2815572,I-J53W56555UKV
