@@ -1,8 +1,74 @@
-<<<<<<< HEAD
-"1","Ammar Malik","Ammar","Malik","malik.s.ammar@gmail.com","1800.0","","","","","",""
-"2","Saleem Kamran","Saleem","Kamran","kamran.ks@gmail.com","50.0","","","","","",""
-"3","Alam Mohammed","Alam","Mohammed","barama2020@gmail.com","500.0","","","","","",""
-=======
+#,Name,,,Email,Donation,Phone,address,,City,State,Zip
+1,Anouar Bencheqroun,Anouar,Bencheqroun,anouarb@gmail.com,64.09,(512) 839-2523,1100 S. Kenney Fort Blvd,,Round Rock,TX,
+2,Naseer Kalyandrug,Naseer,Kalyandrug,naseer.in@gmail.com,200,(346) 219-7694,2941 Barbed Wire St,,Round Rock,TX,78664
+3,Shagufta Javed,Shagufta,Javed,shaguftajaved@gmail.com,291.23,(832) 271-9424,"5700 Tapadera Trace Lane, Apt No 122",,Austin,TX,78727
+4,Fahim Akhtar,Fahim,Akhtar,fahim_akhtar@yahoo.com,100,(512) 740-8869,9713 Spanish Wells Dr,,Austin,TX,78717
+5,Ashfaq Ahmed,Ashfaq,Ahmed,ashfaqec1@gmail.com,50,,,,,,
+6,Zafar Choudhury,Zafar,Choudhury,zschoudhury@gmail.com,311.84,(512) 913-1811,13317 Forest Sage,,Manor,TX,78653
+7,J Qulom,J,Qulom,atlantic2200@gmail.com,15.89,(361) 986-0981,3 Saratoga,,Corp Christi,TX,78413
+8,Moshiur R Khondokar,Moshiur R,Khondokar,moshiur.sqa@gmail.com,50,,,,,,
+9,Suhayl Abusali,Suhayl,Abusali,asthma786@gmail.com,1871.04,(512) 363-0004,,,,,
+10,Tarek Al,Tarek,Al,thattarekguy@gmail.com,50,,,,,,
+11,Muhammad Ahmed,Muhammad,Ahmed,mohammadahmed2911@hotmail.com,700,,,,,,
+12,Meghani Investments,Yousuf,Meghani,ymeghani@mobilelinkusa.com,3000,(281) 701-3321,12501 Reed Rd,,Sugar Land,TX,77478
+13,Akm Murshed Hossain,Akm Murshed,Hossain,murshedh_akm@yahoo.com,50,(512) 547-4514,11008 Reliance Creek Drive,,Austin,TX,78754-5918
+14,Mohammad Ulhaq,Mohammad,Ulhaq,zohaib_haq@yahoo.com,311.84,(512) 804-6364,927 South Lacey Garden Loop,,Houston,TX,77018
+15,Mohsina Ahmed,Mohsina,Ahmed,urmizs@yahoo.com,21.22,(347) 204-7539,3106 Peruga Lane,,Round Rock,TX,78681
+16,Babu Mohammed,Babu,Mohammed,babu_mohammed@yahoo.com,200,(512) 203-5851,1326 Clary Sage Loop,,Round Rock,TX,78665
+17,Junayd Oliver,Junayd,Oliver,junayd.gerald@gmail.com,82.84,(512) 366-0931,2109 Valerian Trail,,Round Rock,TX,78665
+18,Hussam Touza,Hussam,Touza,touza1972@gmail.com,369.41,(832) 814-7561,9613 Solana Vista Loop #A,,Austin,TX,78750
+19,Amber Khan,Amber,Khan,amb34khan@gmail.com,26.74,(210) 636-0063,8250  cruiseshipbay # 504,,San Antonio,TX,
+20,Mohamed Nezzaghy,Mohamed,Nezzaghy,fnezzaghy@gmail.com,75,(737) 231-9779,12336 Copperfield Dr,,Austin,TX,78753
+21,Akber Mohammed,Akber,Mohammed,akbermohammed@yahoo.com,700,,,,,,
+22,Arshad Khan,Arshad,Khan,arshade_k@yahoo.com,500,(512) 241-9869,9701 Morgan Creek Drive,,Austin,TX,78717
+23,Areeb Khan,Areeb,Khan,areebkhan_1@hotmail.com,500,(979) 922-4036,2529 Hailes Ln,,College Station,TX,77845
+24,Bazil Farid,Bazil,Farid,bazilfarid@yahoo.com,104.15,(512) 289-8643,15231 Calaveras Dr,,Austin,TX,78717
+25,Naveed Ahmed,Naveed,Ahmed,naveedatx@gmail.com,1249.8,(512) 425-0707,15128 Glen Echo Dr,,Austin,TX,78717
+26,Syed Fareed,Syed,Fareed,kamsyed@gmail.com,265.54,(512) 796-0232,13016 coriander drive,,Austin,TX,
+27,Abusalam Sohel,Abusalam,Sohel,walakeline@gmail.com,250,,4006 Brook View Ct,,Round Rock,TX,78665
+28,Mohammed Rahim,Mohammed,Rahim,marahimm@gmail.com,53.17,(111) 111-1111,1112 preserve place,,Round Rock,TX,
+29,Kamran Naeem,Kamran,Naeem,kamrantax@hotmail.com,300,(512) 297-6096,15215 Calaveras,,Austin,TX,78717
+30,Arif Shaikh,Arif,Shaikh,arif091973@gmail.com,623.68,(512) 785-0444,3005 Alton Pl,,Round Rock,TX,78665
+31,Junaid Tayyab,Junaid,Tayyab,jtayyab22@gmail.com,1508.8,(512) 608-8685,6731 Yaupon Dr,,Austin,TX,78759
+32,Akif Sultan,Akif,Sultan,akifsultan@yahoo.com,52.23,(512) 736-8359,6504 Skinner Cove,,Austin,TX,78759
+33,Mohammed Osmani,Mohammed,Osmani,owais142@gmail.com,311.84,(512) 669-5521,,,,,
+34,Irfan Mukhtar,Irfan,Mukhtar,irfanmuk@gmail.com,50,(281) 541-4719,21719 Flecherwood Ct,,Spring,TX,77388
+35,Salim Chowdhury,Salim,Chowdhury,salimuc@gmail.com,2000,(512) 905-0645,13512 Utah Flats Drive,,Austin,TX,78727
+36,Hanaa Al Bildawi,Hanaa,Al Bildawi,hanaanaji51@gmail.com,100,(512) 927-6219,19020 Obed River Dr,,Pflugerville,TX,78660-7855
+37,"Siddiqui, Uzma","Siddiqui,",Uzma,siddiquinajam@yahoo.com,520,,,,,,
+38,M100 K100,M100,K100,muneeb+100@nextgeni.net,1.04,(100) 100-100,address 100,,City 100,STATE 100,100100
+39,Mohammad Asim,Mohammad,Asim,mohammad_asim@msn.com,500,(512) 497-5948,2157 Rachel Ln,,Round Rock,TX,78664
+40,Mohammed Feras Majeed,Mohammed Feras,Majeed,feras.majeed@gmail.com,104.15,(512) 888-8284,"13329, Indian Oak Bnd",,Manor,TX,78653
+41,Adnan Badar,Adnan,Badar,badaradnan@yahoo.com,184.35,(512) 903-8830,1120 Fossil Beds Dr,,Pflugerville,TX,
+42,Eman Kallash,Eman,Kallash,em2an@yahoo.com,1038.73,(214) 334-3779,6927 Covered Bridge,,Austin,TX,78736
+43,Bilal Wahid,Bilal,Wahid,bilalwahid09@yahoo.com,5.46,(512) 999-1427,5509 Omeara Cove,,Austin,TX,78747
+44,Naeem Altaf,Naeem,Altaf,naeem.altaf@gmail.com,200,,,,,,
+45,Umar Iyoob,Umar,Iyoob,umariyoob@gmail.com,62.93,(512) 767-4082,1525 Grand Avenue Pkwy #16108,,Pflugerville,TX,78660
+46,Shaik Mohseen,Shaik,Mohseen,mohseensm@yahoo.com,1000,(254) 913-7750,15704 Echo  Hills Drive,,Austin,TX,78717
+47,Nabil Khatri,Nabil,Khatri,nabil.khatri@utexas.edu,133.39,(512) 905-3842,1604 Passion Vine CV,,Pflugerville,TX,
+48,Naeem Altaf,Naeem,Altaf,naltaf@us.ibm.com,300,(512) 657-6328,1434 Bull Horn Loop,,Round Rock,TX,78665
+49,Syed Haiderzaidi,Syed,Haiderzaidi,haiderzaidi@att.net,519.52,(512) 426-4592,3917 Obsidian Ln,,Round Rock,TX,78681
+50,Aater Suleman,Aater,Suleman,maater@gmail.com,10.92,(512) 426-5021,15906 Thundercloud Cv,,Austin,TX,78717
+51,Salama Tayyaba,Salama,Tayyaba,salamatayyaba@yahoo.com,500,(512) 850-2489,18708 Chrighton Castle Bend,,Pflugerville,TX,78660
+52,Mohammad-ali Tukdi,Mohammad-ali,Tukdi,ali@tukdi.net,350,(512) 970-6493,,,,,
+53,Syed Ansari,Syed,Ansari,toansarisyed@yahoo.com,100,,,,,,
+54,'hatem Nour El Deen,'hatem,Nour El Deen,hnour2@yahoo.com,1200,(915) 208-1963,2817 Moving Water Lane,,Pflugerville,TX,78660
+55,Younes Rahhali,Younes,Rahhali,zermoumia@yahoo.com,50,(512) 955-1314,217 Segovia Way,,Pflugerville,TX,78660
+56,Azhar Hashmi,Azhar,Hashmi,azharhashmi@gmail.com,26.06,(512) 413-6349,11213 McKinney spring  Dr,,Austin,TX,
+57,Rizwan Ali,Rizwan,Ali,rizwhiz@gmail.com,211.73,(512) 680-3380,216 Shorthorn Street,,Cedar Park,TX,
+58,Mustafa Anany,Mustafa,Anany,ananybb@gmail.com,100,(512) 517-2423,152 Segovia Way,,Pflugerville,TX,78660
+59,Sheik Abdulhameed,Sheik,Abdulhameed,hameed.sheik@gmail.com,208,(512) 310-1406,15308 Fernhill Dr,,Austin,TX,78717
+60,Amir Rauf,Amir,Rauf,araufa@hotmail.com,1055,(952) 465-2360,120 Snowflake Dr,,Round Rock,TX,78664
+61,Imtiyaz Ahmed Mohammed,Imtiyaz Ahmed,Mohammed,imtiyaz.md4047@gmail.com,50,,12007 N Lamar Blvd,,Austin,TX,78763
+62,Dr. M. Islam,Dr.,M. Islam,mislam.texas@gmail.com,34,(512) 634-7545,11701 Metric Blvd apt 1735,,Austin,TX,
+63,Safuddin Qureshi,Safuddin,Qureshi,store.emails05@gmail.com,26.74,(847) 555-7048,30W013 Willow Court,,Warrenville,IL,60555
+64,Muhammad Bora,Muhammad,Bora,myusufbora@hotmail.com,100,(512) 507-4915,14046 Collins Ranch Place,,San Diego,CA,92130
+65,Shahid Ahmed,Shahid,Ahmed,itworks1000@gmail.com,150,(508) 596-8901,,,,,
+66,Naeem Altaf,Naeem,Altaf,lahorite@hotmail.com,600,(512) 657-6328,1434 Bull Horn Loop,,Round Rock,TX,78665
+67,Md Shamim Nur Rahman,Md Shamim Nur,Rahman,shamimnurrahman@gmail.com,4154.31,(208) 242-6960,"12007 N. Lamar Blvd, Apt 416",,Austin,TX,78753
+68,Syed Elias,Syed,Elias,sailes39@gmail.com,100,(512) 246-0899,5633 Sambuco St,,Round Rock,TX,78665
+69,Mohammad Khan,Mohammad,Khan,afzal200982@yahoo.com,626.76,(512) 446-9139,,,,,
+70,Ahmed Ali,Ahmed,Ali,ahmed.b.ali007@gmail.com,10.61,,,,,,
 71,Vali Shaik,Vali,Shaik,reachvali@gmail.com,1000,,728 Expedition Way,,Round Rock,TX,78665
 72,Hassan Rashid,Hassan,Rashid,hbrashid@gmail.com,52.23,(512) 944-7974,1641 Jerusalem Dr,,Round Rock,TX,78664
 73,N Yoosufani,N,Yoosufani,kyousuf79@gmail.com,103.19,,,,,,
@@ -27,7 +93,7 @@
 92,Zeba Maniya,Zeba,Maniya,zebamaniya@gmail.com,26.74,(512) 698-5808,6210 Mesa Grande Drive,,Austin,TX,78749
 93,Murshid Mustafa,Murshid,Mustafa,murshid@yahoo.com,50,,,,,,
 94,Zakaria Nayeemuddin,Zakaria,Nayeemuddin,zakarianayeem@gmail.com,104.46,(832) 231-4735,"12007 N Lamar Blvd, Apt 711",,Austin,TX,78753
-95,Ali Hamodi,Ali,Hamodi,ali.tech80@gmail.com,700,(512) 927-6219,12800 Center Lake Dr#317,,Austin,TX,78753
+95,Ali Hamodi,Ali,Hamodi,ali.tech80@gmail.com,600,(512) 927-6219,12800 Center Lake Dr#317,,Austin,TX,78753
 96,Safdar Khan,Safdar,Khan,safdarkhane1@gmail.com,700,(512) 669-3738,1917 Windberry Path,,Round Rock,TX,78665
 97,Shahzad Mohammed,Shahzad,Mohammed,shahzade99@gmail.com,50,(720) 651-3643,12007 N Lame Blvd,,Austin,TX,78753
 98,Nawjif Hasan,Nawjif,Hasan,nawajif321@gmail.com,500,,,,,,
@@ -42,4 +108,6 @@
 107,Muhammad Farooq,Muhammad,Farooq,mrfarooq@gmail.com,5000,(952) 217-6821,3130 Blantyre Bend,,Round Rock,TX,78664
 108,Nuzhat Shakeel,Nuzhat,Shakeel,nuzhat78660@yahoo.com,70,(512) 670-3636,303 Ambrose Dr,,Pflugerville,TX,78660
 109,Tauseef Rab,Tauseef,Rab,tauseef.rab@gmail.com,26.48,(512) 565-9527,11228 barn owl drive,,Austin,TX,
->>>>>>> 263d8642f2dc1c1d15d3c734e212e1ea95dfe81b
+110,Ammar Malik,Ammar,Malik,malik.s.ammar@gmail.com,1800,,,,,,
+111,Saleem Kamran,Saleem,Kamran,kamran.ks@gmail.com,50,,,,,,
+112,Alam Mohammed,Alam,Mohammed,barama2020@gmail.com,500,,,,,,
