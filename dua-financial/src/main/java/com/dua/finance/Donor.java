@@ -11,7 +11,7 @@ public class Donor {
 	}
 	
 	public Donor(String fullName, String firstName, String lastName, String email, double donationAmount, 
-			String phone, String address1, String address2, String city, String state, String zip)
+			String phone, String address1, String city, String state, String zip)
 	{
 		this.fullName = fullName;
 		this.firstName = firstName;
@@ -20,7 +20,6 @@ public class Donor {
 		this.donationAmount = donationAmount;
 		this.phone = phone;
 		this.address1 = Utility.getCamelCase(address1);
-		this.address2 = Utility.getCamelCase(address2);
 		this.city = Utility.getCamelCase(city);
 		this.state = state;
 		this.zip = zip;		
@@ -66,33 +65,29 @@ public class Donor {
 	@CsvBindByPosition(position = 4)
 	public String email;
 	
-	@CsvBindByName(column = "Donation Amount")
-	@CsvBindByPosition(position = 5)
-	public double donationAmount;
-	
 	@CsvBindByName(column = "Phone")
-	@CsvBindByPosition(position = 6)
+	@CsvBindByPosition(position = 5)
 	public String phone;
 	
 	@CsvBindByName(column = "Address Line1")
-	@CsvBindByPosition(position = 7)
+	@CsvBindByPosition(position = 6)
 	public String address1;
 	
-	@CsvBindByName(column = "Address Line2")
-	@CsvBindByPosition(position = 8)
-	public String address2;
-	
 	@CsvBindByName(column = "City")
-	@CsvBindByPosition(position = 9)
+	@CsvBindByPosition(position = 7)
 	public String city;
 	
 	@CsvBindByName(column = "State")
-	@CsvBindByPosition(position = 10)
+	@CsvBindByPosition(position = 8)
 	public String state;
 	
 	@CsvBindByName(column = "Zip")
-	@CsvBindByPosition(position = 11)
+	@CsvBindByPosition(position = 9)
 	public String zip;
+	
+	@CsvBindByName(column = "Donation Amount")
+	@CsvBindByPosition(position = 10)
+	public double donationAmount;
 	
 	public String getFullName() {
 		return Utility.getCamelCase(fullName);
@@ -104,7 +99,7 @@ public class Donor {
 		if(firstName == null)
 		{
 			if(fullName != null) {
-				return getFullName().substring(0,getFullName().indexOf(" "));
+				return getFullName().substring(0, getFullName().indexOf(" "));
 			}
 		}
 		return Utility.getCamelCase(firstName);		
@@ -148,12 +143,6 @@ public class Donor {
 	public void setAddress1(String address1) {
 		this.address1 = address1;
 	}
-	public String getAddress2() {
-		return address2;
-	}
-	public void setAddress2(String address2) {
-		this.address2 = address2;
-	}
 	public String getCity() {
 		return city;
 	}
@@ -183,9 +172,13 @@ public class Donor {
 
 	@Override
 	public String toString() {
-		return "Donor [fullName=" + fullName + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
-				+ email + ", donationAmount=" + donationAmount + ", phone=" + phone + ", address1=" + address1
-				+ ", address2=" + address2 + ", city=" + city + ", state=" + state + ", zip=" + zip + ", donorId="
-				+ donorId + "]";
+		return "Donor [donorId=" + donorId + ", fullName=" + fullName + ", firstName=" + firstName + ", lastName="
+				+ lastName + ", email=" + email + ", donationAmount=" + donationAmount + ", phone=" + phone
+				+ ", address1=" + address1 + ", city=" + city + ", state=" + state + ", zip=" + zip + "]";
+	}
+	
+	public static String getHeader()
+	{
+		return "#, Name,	First Name,	Last Name,	Email,	Phone,	address,	City,	State,	Zip,	Donation \n";
 	}
 }

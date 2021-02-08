@@ -11,13 +11,7 @@ public class Utility {
 
 	public static void main(String args[])
 	{
-		//logger.info(formatPhone("1234456787"));
-		//String[] names = parseName("Zelle Transfer Conf# 371094556; MASTANVALI KALESHA SHAIK"); 
-		//logger.info("First Name: {}",names[0]);
-		//logger.info("Last Name: {}",names[1]);
-		String s = "Receipt-asthma786@gmail.com.pdf";
-		s = s.substring(8,s.indexOf(".pdf"));
-		System.out.println(s);
+
 	}
 	
 	public static Donor syncObject(Donor base, Donor incoming)
@@ -37,10 +31,6 @@ public class Utility {
 		if(base.getAddress1() == null && incoming.getAddress1() != null)
 		{
 			base.setAddress1(incoming.getAddress1());
-		}
-		if(base.getAddress2() == null && incoming.getAddress2() != null)
-		{
-			base.setAddress2(incoming.getAddress2());
 		}
 		if(base.getCity() == null && incoming.getCity() != null)
 		{

@@ -113,7 +113,7 @@ public class TaxReceipts {
             	zip = null;
             	
             	Donor donor = donorMap.get(email);            	
-            	Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+            	Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, city, state, zip);
 
             	if(donor==null) {
             		donor = temp;
@@ -159,7 +159,7 @@ public class TaxReceipts {
             	state = null;
             	zip = null;
             	
-            	Donor donor = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+            	Donor donor = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, city, state, zip);
             	
             	for (Map.Entry<String, Donor> entry : donorMap.entrySet()) {
             		Donor temp = entry.getValue();
@@ -217,7 +217,7 @@ public class TaxReceipts {
             	zip = null;
             	
             	Donor donor = donorMap.get(email);            	
-            	Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+            	Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, city, state, zip);
 
             	if(donor==null) {
             		donor = temp;
@@ -263,7 +263,7 @@ public class TaxReceipts {
             	state = null;
             	zip = rec[4];
             	Donor donor = donorMap.get(email);
-            	Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+            	Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, city, state, zip);
 
             	if(donor==null) {
             		donor = temp;
@@ -309,7 +309,7 @@ public class TaxReceipts {
             	zip = rec[21];
             	
             	Donor donor = donorMap.get(email);
-            	Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, address2, city, state, zip);
+            	Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, city, state, zip);
 
             	if(donor==null) {
             		donor = temp;
