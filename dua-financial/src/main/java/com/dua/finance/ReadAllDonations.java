@@ -54,7 +54,7 @@ public class ReadAllDonations {
 		for(String file : files)
 		{
 			logger.info("reading {} file",file);
-			if(file.contains(FINAL_REPORT))
+			if(file.contains(FINAL_REPORT) || file.toUpperCase().contains("RECEIPTS"))
 			{
 				logger.info("skipping {} file",file);
 				continue;

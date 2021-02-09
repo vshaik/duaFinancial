@@ -1,9 +1,17 @@
 package com.dua.finance;
 
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.text.WordUtils;
 import org.slf4j.LoggerFactory;
+
+import com.opencsv.bean.ColumnPositionMappingStrategy;
+import com.opencsv.bean.CsvToBean;
+import com.opencsv.bean.CsvToBeanBuilder;
 
 public class Utility {
 	
@@ -149,5 +157,21 @@ public class Utility {
 				logger.info(entry.getKey() + ":" + entry.getValue());
         	}	
 		}
+	}
+	
+	public static List<Donor> beanBuilder(Path path, Class clazz) throws Exception {
+	    ColumnPositionMappingStrategy ms = new ColumnPositionMappingStrategy();
+	    ms.setType(clazz);
+
+	    Reader reader = Files.newBufferedReader(path);
+	    CsvToBean cb = new CsvToBeanBuilder(reader)
+	      .withType(clazz)
+	      .withMappingStrategy(ms)
+	      .withSkipLines(1)
+	      .build();
+
+	   List<Donor> objects = cb.parse();
+	   reader.close();
+	   return objects;
 	}
 }

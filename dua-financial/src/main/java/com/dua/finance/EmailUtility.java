@@ -2,9 +2,6 @@ package com.dua.finance;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Properties;
@@ -26,31 +23,33 @@ import javax.mail.internet.MimeMultipart;
 
 import org.slf4j.LoggerFactory;
 
-import com.opencsv.bean.ColumnPositionMappingStrategy;
-import com.opencsv.bean.CsvToBean;
-import com.opencsv.bean.CsvToBeanBuilder;
-
 public class EmailUtility {
 
 	public static final org.slf4j.Logger logger = LoggerFactory.getLogger(EmailUtility.class);
-	static final String FINAL_REPORT = "C:/git-repos/duaFinancial/reports/DUA-2020/ConsolidatedList.csv";
+	static final String FINAL_REPORT = "ConsolidatedList.csv";
 	
 public static void main(String args[])
 {
 	
 	try {
-		List<Donor> donors = beanBuilderExample(Paths.get(FINAL_REPORT), Donor.class);		
-		sendMail(donors);
+		
+		if(args.length == 0)
+		{
+			logger.error("please provide a valid source folder!");
+			System.exit(0);
+		}
+		String sourceFolder = args[0];		
+		List<Donor> donors = Utility.beanBuilder(Paths.get(sourceFolder+"/"+FINAL_REPORT), Donor.class);		
+		sendMail(donors, sourceFolder);
+		
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
 		
 }
 
-
-public static void sendMail(List<Donor> donors)
-{	
-
+public static void sendMail(List<Donor> donors, String sourceFolder)
+{
 	Properties prop = new Properties();
     prop.put("mail.smtp.host", "smtp.gmail.com");
     prop.put("mail.smtp.port", "465");
@@ -67,7 +66,6 @@ public static void sendMail(List<Donor> donors)
             });
 
     try {
-
     	
     	for(Donor donor : donors)
     	{	
@@ -82,7 +80,7 @@ public static void sendMail(List<Donor> donors)
 	    	message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(donor.getEmail())); 
 	    	
 	    	MimeBodyPart attachmentPart = new MimeBodyPart();
-	    	attachmentPart.attachFile(new File("C:/git-repos/duaFinancial/reports/DUA-2020/Receipts/pdf/DonationReceipt-"+donor.getDonorId()+".pdf"));
+	    	attachmentPart.attachFile(new File(sourceFolder+"/Receipts/pdf/DonationReceipt-"+donor.getDonorId()+".pdf"));
 	    	
 	    	Multipart multipart = new MimeMultipart();
 	    	multipart.addBodyPart(messageBodyPart);
@@ -108,21 +106,6 @@ public static Set<String> listFilesUsingJavaIO(String dir) {
       .filter(file -> !file.isDirectory())
       .map(File::getName)
       .collect(Collectors.toSet());
-}
-
-public static List<Donor> beanBuilderExample(Path path, Class clazz) throws Exception {
-    ColumnPositionMappingStrategy ms = new ColumnPositionMappingStrategy();
-    ms.setType(clazz);
-
-    Reader reader = Files.newBufferedReader(path);
-    CsvToBean cb = new CsvToBeanBuilder(reader)
-      .withType(clazz)
-      .withMappingStrategy(ms)
-      .build();
-
-   List<Donor> objects = cb.parse();
-   reader.close();
-   return objects;
 }
 	
 }
