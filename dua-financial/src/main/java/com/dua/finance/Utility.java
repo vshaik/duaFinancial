@@ -152,20 +152,17 @@ public class Utility {
 	public static void printMap(Map<String, Donor> donorMap)
 	{
 		for (Map.Entry<String, Donor> entry : donorMap.entrySet()) {
-			if("reachvali@yahoo.com".equals(entry.getKey()))
-        	{
 				logger.info(entry.getKey() + ":" + entry.getValue());
-        	}	
 		}
 	}
 	
-	public static List<Donor> beanBuilder(Path path, Class clazz) throws Exception {
-	    ColumnPositionMappingStrategy ms = new ColumnPositionMappingStrategy();
-	    ms.setType(clazz);
+	public static List<Donor> beanBuilder(Path path) throws Exception {
+	    ColumnPositionMappingStrategy<Donor> ms = new ColumnPositionMappingStrategy<Donor>();
+	    ms.setType(Donor.class);
 
 	    Reader reader = Files.newBufferedReader(path);
-	    CsvToBean cb = new CsvToBeanBuilder(reader)
-	      .withType(clazz)
+	    CsvToBean<Donor> cb = new CsvToBeanBuilder<Donor>(reader)
+	      .withType(Donor.class)
 	      .withMappingStrategy(ms)
 	      .withSkipLines(1)
 	      .build();

@@ -34,7 +34,7 @@ public class PrintReceipts {
 	
 	public static void print(String sourceFolder) throws Exception
 	{
-		List<Donor> donors = Utility.beanBuilder(Paths.get(sourceFolder+"/"+FINAL_REPORT), Donor.class);
+		List<Donor> donors = Utility.beanBuilder(Paths.get(sourceFolder+"/"+FINAL_REPORT));
 		logger.info("Donors list size: "+donors.size());
 		String templateContent = readAllBytes(sourceFolder+"/receipts/"+RECEIPT_TEMPLATE);
 		for(Donor donor : donors) {

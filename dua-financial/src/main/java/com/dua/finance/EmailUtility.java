@@ -39,7 +39,7 @@ public static void main(String args[])
 			System.exit(0);
 		}
 		String sourceFolder = args[0];		
-		List<Donor> donors = Utility.beanBuilder(Paths.get(sourceFolder+"/"+FINAL_REPORT), Donor.class);		
+		List<Donor> donors = Utility.beanBuilder(Paths.get(sourceFolder+"/"+FINAL_REPORT));		
 		sendMail(donors, sourceFolder);
 		
 	} catch (Exception e) {
@@ -91,6 +91,9 @@ public static void sendMail(List<Donor> donors, String sourceFolder)
 	    	Transport.send(message);
 	    	
 	    	logger.info("Sent receipt to "+donor.getEmail());
+	    	
+	    	//update Email sent status
+	    	
     	}
         System.out.println("Done");
 

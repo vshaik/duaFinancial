@@ -89,6 +89,10 @@ public class Donor {
 	@CsvBindByPosition(position = 10)
 	public double donationAmount;
 	
+	@CsvBindByName(column = "Email Sent")
+	@CsvBindByPosition(position = 11)
+	public String emailSent;
+	
 	public String getFullName() {
 		return Utility.getCamelCase(fullName);
 	}
@@ -170,15 +174,26 @@ public class Donor {
 		this.donorId = donorId;
 	}
 
+	
+	
+	public String getEmailSent() {
+		return emailSent;
+	}
+
+	public void setEmailSent(String emailSent) {
+		this.emailSent = emailSent;
+	}
+	
 	@Override
 	public String toString() {
 		return "Donor [donorId=" + donorId + ", fullName=" + fullName + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", email=" + email + ", donationAmount=" + donationAmount + ", phone=" + phone
-				+ ", address1=" + address1 + ", city=" + city + ", state=" + state + ", zip=" + zip + "]";
+				+ lastName + ", email=" + email + ", phone=" + phone + ", address1=" + address1 + ", city=" + city
+				+ ", state=" + state + ", zip=" + zip + ", donationAmount=" + donationAmount + ", emailSent="
+				+ emailSent + "]";
 	}
 	
 	public static String getHeader()
 	{
-		return "#, Name,	First Name,	Last Name,	Email,	Phone,	address,	City,	State,	Zip,	Donation \n";
+		return "#, Name,	First Name,	Last Name,	Email,	Phone,	address,	City,	State,	Zip,	Donation, Email Sent \n";
 	}
 }
