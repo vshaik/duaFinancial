@@ -11,7 +11,7 @@ public class PrintReceipts {
 	
 	public static final org.slf4j.Logger logger = LoggerFactory.getLogger(PrintReceipts.class);
 	static final String FINAL_REPORT = "ConsolidatedList.csv";
-	static final String RECEIPT_TEMPLATE = "DUA Tax Receipt Letter 2020.rtf";	
+	static final String RECEIPT_TEMPLATE = "TaxReceiptLetter.rtf";	
 
 	public static void main(String[] args) {
 		
@@ -44,6 +44,8 @@ public class PrintReceipts {
 			content = content.replaceAll("City: XX-2-XX", donor.getCity()!=null?donor.getCity():"");
 			content = content.replaceAll("State: XX-3-XX", donor.getState()!=null?donor.getState():"");
 			content = content.replaceAll("Zip: XX-4-XX", donor.getZip()!=null?donor.getZip():"");
+			content = content.replaceAll("AAAAAA", donor.getEmail()!=null?donor.getEmail():"");
+			content = content.replaceAll("BBBBBB", donor.getPhone() !=null?donor.getPhone():"");
 			Files.write(Paths.get(sourceFolder+"/receipts/"+"/DonationReceipt-"+donor.getDonorId()+".rtf"), content.getBytes());
 		}
 	}
