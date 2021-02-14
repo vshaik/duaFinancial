@@ -27,6 +27,9 @@ public class EmailUtility {
 
 	public static final org.slf4j.Logger logger = LoggerFactory.getLogger(EmailUtility.class);
 	static final String FINAL_REPORT = "ConsolidatedList.csv";
+	public static final String EMAIL = "reachvali@gmail.com";
+	public static final String PASSWORD = "ityzntbhrjiqvnmu";
+	public static final String ORG = "Islamic Center Austin, TX";
 	
 public static void main(String args[])
 {
@@ -61,7 +64,7 @@ public static void sendMail(List<Donor> donors, String sourceFolder)
 	Session session = Session.getInstance(prop,
             new javax.mail.Authenticator() {
                 protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication("finance@darululoomaustin.org", "nrncicpqgqchljrz");
+                    return new PasswordAuthentication(EMAIL, PASSWORD);
                 }
             });
 
@@ -77,11 +80,11 @@ public static void sendMail(List<Donor> donors, String sourceFolder)
     		
 	    	BodyPart messageBodyPart = new MimeBodyPart(); 
 	    	messageBodyPart.setText("\n\n Assalamalekum, please find the attached donation receipt. "
-	    			+ "\n\n If you have any questions please contact us at finance@darululoomaustin.org \n\n Jazakallah Khair, \n\n Darul Uloom Austin, TX");
+	    			+ "\n\n If you have any questions please contact us at "+EMAIL+" \n\n Jazakallah Khair, \n\n "+ORG);
 	    	
 	    	Message message = new MimeMessage(session); 
-	    	message.setFrom(new InternetAddress("finance@darululoomaustin.org"));
-	    	message.setSubject("Donation Receipt - Darul Uloom Austin, TX - Year 2020"); 
+	    	message.setFrom(new InternetAddress(EMAIL));
+	    	message.setSubject("Donation Receipt - "+ORG+" - Year 2020"); 
 	    	
 	    	message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(donor.getEmail())); 
 	    	
