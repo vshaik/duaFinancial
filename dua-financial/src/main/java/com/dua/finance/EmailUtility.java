@@ -68,7 +68,13 @@ public static void sendMail(List<Donor> donors, String sourceFolder)
     try {
     	
     	for(Donor donor : donors)
-    	{	
+    	{
+    		
+    		if(donor.getEmail().contains("@temp.com"))
+    		{
+    			continue;
+    		}
+    		
 	    	BodyPart messageBodyPart = new MimeBodyPart(); 
 	    	messageBodyPart.setText("\n\n Assalamalekum, please find the attached donation receipt. "
 	    			+ "\n\n If you have any questions please contact us at finance@darululoomaustin.org \n\n Jazakallah Khair, \n\n Darul Uloom Austin, TX");

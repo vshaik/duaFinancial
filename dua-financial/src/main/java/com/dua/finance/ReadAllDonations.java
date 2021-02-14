@@ -20,7 +20,8 @@ public class ReadAllDonations {
 	
 	public static final org.slf4j.Logger logger = LoggerFactory.getLogger(ReadAllDonations.class);	
 	static final String FINAL_REPORT = "ConsolidatedList.csv";		
-	
+	public static int tmpEmailCounter = 0;
+	public static String tmpEmail = "temp-counter@temp.com";
 	public static void main(String[] args) {
 		
 				if(args.length == 0)
@@ -122,8 +123,10 @@ public class ReadAllDonations {
             			
             	email = rec[3];
             	
-            	if(email == null || "".equals(email.trim()))
-            		continue;
+            	if(email == null || "".equals(email.trim())) {
+            		tmpEmailCounter++;
+            		email = tmpEmail.replaceAll("counter", String.valueOf(tmpEmailCounter));            		
+            	}
             	
             	email = email.trim();           	            	
             	phone = rec[4];
