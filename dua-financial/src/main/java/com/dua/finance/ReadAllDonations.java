@@ -10,7 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.opencsv.CSVReader;
 import com.opencsv.bean.StatefulBeanToCsv;
@@ -18,10 +19,10 @@ import com.opencsv.bean.StatefulBeanToCsvBuilder;
 
 public class ReadAllDonations {
 	
-	public static final org.slf4j.Logger logger = LoggerFactory.getLogger(ReadAllDonations.class);	
-	static final String FINAL_REPORT = "ConsolidatedList.csv";		
+	public static final Logger logger = LogManager.getLogger(ReadAllDonations.class);
 	public static int tmpEmailCounter = 0;
 	public static String tmpEmail = "temp-counter@temp.com";
+	
 	public static void main(String[] args) {
 		
 				if(args.length == 0)
@@ -55,7 +56,7 @@ public class ReadAllDonations {
 		for(String file : files)
 		{
 			logger.info("reading {} file",file);
-			if(file.contains(FINAL_REPORT) || file.toUpperCase().contains("RECEIPTS") || file.toUpperCase().contains("SOURCE"))			
+			if(file.contains(AppConstants.FINAL_REPORT) || file.toUpperCase().contains("RECEIPTS") || file.toUpperCase().contains("SOURCE"))			
 			{
 				logger.info("skipping {} file",file);
 				continue;
@@ -67,7 +68,7 @@ public class ReadAllDonations {
 		logger.info("Map size: " + donorMap.size());
 		try {
 			
-			Writer writer = Files.newBufferedWriter(Paths.get(sourceFolder+"/"+FINAL_REPORT));
+			Writer writer = Files.newBufferedWriter(Paths.get(sourceFolder+"/"+AppConstants.FINAL_REPORT));
 			writer.append(Donor.getHeader());
 			StatefulBeanToCsvBuilder<Donor> builder = new StatefulBeanToCsvBuilder<>(writer);
 	        StatefulBeanToCsv<Donor> beanWriter = builder.build();

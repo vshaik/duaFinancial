@@ -21,15 +21,12 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class EmailUtility {
 
-	public static final org.slf4j.Logger logger = LoggerFactory.getLogger(EmailUtility.class);
-	static final String FINAL_REPORT = "ConsolidatedList.csv";
-	public static final String EMAIL = "reachvali@gmail.com";
-	public static final String PASSWORD = "ityzntbhrjiqvnmu";
-	public static final String ORG = "Islamic Center Austin, TX";
+	public static final Logger logger = LogManager.getLogger(EmailUtility.class);
 	
 public static void main(String args[])
 {
@@ -42,7 +39,7 @@ public static void main(String args[])
 			System.exit(0);
 		}
 		String sourceFolder = args[0];		
-		List<Donor> donors = Utility.beanBuilder(Paths.get(sourceFolder+"/"+FINAL_REPORT));		
+		List<Donor> donors = Utility.beanBuilder(Paths.get(sourceFolder + "/" + AppConstants.FINAL_REPORT));		
 		sendMail(donors, sourceFolder);
 		
 	} catch (Exception e) {
@@ -64,7 +61,7 @@ public static void sendMail(List<Donor> donors, String sourceFolder)
 	Session session = Session.getInstance(prop,
             new javax.mail.Authenticator() {
                 protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication(EMAIL, PASSWORD);
+                    return new PasswordAuthentication(AppConstants.EMAIL, AppConstants.PASSWORD);
                 }
             });
 
@@ -80,11 +77,11 @@ public static void sendMail(List<Donor> donors, String sourceFolder)
     		
 	    	BodyPart messageBodyPart = new MimeBodyPart(); 
 	    	messageBodyPart.setText("\n\n Assalamalekum, please find the attached donation receipt. "
-	    			+ "\n\n If you have any questions please contact us at "+EMAIL+" \n\n Jazakallah Khair, \n\n "+ORG);
+	    			+ "\n\n If you have any questions please contact us at "+AppConstants.EMAIL+" \n\n Jazakallah Khair, \n\n "+ AppConstants.ORG);
 	    	
 	    	Message message = new MimeMessage(session); 
-	    	message.setFrom(new InternetAddress(EMAIL));
-	    	message.setSubject("Donation Receipt - "+ORG+" - Year 2020"); 
+	    	message.setFrom(new InternetAddress(AppConstants.EMAIL));
+	    	message.setSubject("Donation Receipt - "+AppConstants.ORG+" - Year 2020"); 
 	    	
 	    	message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(donor.getEmail())); 
 	    	

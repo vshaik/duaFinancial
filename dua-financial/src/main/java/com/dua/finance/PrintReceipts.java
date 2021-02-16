@@ -5,13 +5,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class PrintReceipts {
 	
-	public static final org.slf4j.Logger logger = LoggerFactory.getLogger(PrintReceipts.class);
-	static final String FINAL_REPORT = "ConsolidatedList.csv";
-	static final String RECEIPT_TEMPLATE = "TaxReceiptLetter.rtf";	
+	public static final Logger logger = LogManager.getLogger(PrintReceipts.class);
 
 	public static void main(String[] args) {
 		
@@ -34,9 +33,9 @@ public class PrintReceipts {
 	
 	public static void print(String sourceFolder) throws Exception
 	{
-		List<Donor> donors = Utility.beanBuilder(Paths.get(sourceFolder+"/"+FINAL_REPORT));
+		List<Donor> donors = Utility.beanBuilder(Paths.get(sourceFolder+"/"+AppConstants.FINAL_REPORT));
 		logger.info("Donors list size: "+donors.size());
-		String templateContent = readAllBytes(sourceFolder+"/receipts/"+RECEIPT_TEMPLATE);
+		String templateContent = readAllBytes(sourceFolder+"/receipts/"+AppConstants.RECEIPT_TEMPLATE);
 		for(Donor donor : donors) {
 			String content = templateContent.replaceAll("XX-Name-XX", donor.getFullName());
 			content = content.replaceAll("XX-Amt-XX", Utility.getFormattedAmt(donor.getDonationAmount()));			

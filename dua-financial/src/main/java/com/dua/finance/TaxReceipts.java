@@ -9,7 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.opencsv.CSVReader;
 import com.opencsv.bean.ColumnPositionMappingStrategy;
@@ -18,7 +19,7 @@ import com.opencsv.bean.StatefulBeanToCsvBuilder;
 
 public class TaxReceipts {
 	
-	public static final org.slf4j.Logger logger = LoggerFactory.getLogger(TaxReceipts.class);
+	public static final Logger logger = LogManager.getLogger(TaxReceipts.class);
 	static final String DONORBOX_FILE = "C:/git-repos/duaFinancial/reports/DUA-2020/donorbox_darululoom-austin_from_2020-01-01_to_2020-12-31_cst.csv";
 	static final String FEEL_BLESSED_FILE = "C:/git-repos/duaFinancial/reports/DUA-2020/feelingBlessed_org_a6f59bc20c289d2de30592abd2b0f0ac.csv";
 	static final String SQUARE_FILE = "C:/git-repos/duaFinancial/reports/DUA-2020/square_transactions-2020-01-01-2021-01-01.csv";

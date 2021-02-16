@@ -7,7 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.text.WordUtils;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.opencsv.bean.ColumnPositionMappingStrategy;
 import com.opencsv.bean.CsvToBean;
@@ -15,7 +16,7 @@ import com.opencsv.bean.CsvToBeanBuilder;
 
 public class Utility {
 	
-	public static final org.slf4j.Logger logger = LoggerFactory.getLogger(Utility.class);
+	public static final Logger logger = LogManager.getLogger(Utility.class);
 
 	public static void main(String args[])
 	{
