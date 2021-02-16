@@ -37,7 +37,7 @@ public class ReadAllDonations {
 	public void readDonationData(String sourceFolder)
 	{		
 		Map<String, Donor> donorMap = new HashMap<String, Donor>();
-		logger.info("scanning {} source folder", sourceFolder);
+		logger.info("scanning {}", sourceFolder);
 		File directory = new File(sourceFolder);
 		
 		if(!directory.exists())
@@ -49,23 +49,23 @@ public class ReadAllDonations {
 		String files[] = directory.list();
 		if(files.length == 0)
 		{
-			logger.error("no files exist!");
+			logger.error("files don't exist!");
 			return;
 		}
 		
 		for(String file : files)
-		{
-			logger.info("reading {} file",file);
+		{			
 			if(file.contains(AppConstants.FINAL_REPORT) || file.toUpperCase().contains("RECEIPTS") || file.toUpperCase().contains("SOURCE"))			
 			{
-				logger.info("skipping {} file",file);
+				logger.info("skipping file/folder {}",file);
 				continue;
 			}
+			logger.info("reading file {}",file);
 			readFile(donorMap, sourceFolder+"/"+file);
 		}
 		
 		// Write to a final consolidated report
-		logger.info("Map size: " + donorMap.size());
+		logger.info("total number of unique donors: " + donorMap.size());
 		try {
 			
 			Writer writer = Files.newBufferedWriter(Paths.get(sourceFolder+"/"+AppConstants.FINAL_REPORT));
