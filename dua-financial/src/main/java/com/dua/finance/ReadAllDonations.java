@@ -95,9 +95,10 @@ public class ReadAllDonations {
 	public static void readFile(Map<String, Donor> donorMap, String fileName) 
 	{	
         try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
-            List<String[]> recList = reader.readAll();
-                        
+        	
+            List<String[]> recList = reader.readAll();                        
             int i=0;
+            
             for(String[] rec : recList)
             {            	
             	i++;
@@ -150,9 +151,9 @@ public class ReadAllDonations {
             		donor.setDonationAmount(donor.getDonationAmount()+donationAmount);
             	}
             	
-            	donorMap.put(email, donor);
-            	
+            	donorMap.put(email, donor);            	
             }
+            
         }
         catch(Exception e)
         {

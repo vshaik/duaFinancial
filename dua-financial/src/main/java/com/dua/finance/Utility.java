@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.WordUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,9 +19,9 @@ public class Utility {
 	
 	public static final Logger logger = LogManager.getLogger(Utility.class);
 
-	public static void main(String args[])
+	public static boolean isBlank(String s)
 	{
-
+		return StringUtils.isBlank(s);
 	}
 	
 	public static Donor syncObject(Donor base, Donor incoming)

@@ -45,7 +45,7 @@ public class PrintReceipts {
 			content = content.replaceAll("Zip: XX-4-XX", donor.getZip()!=null?donor.getZip():"");
 			content = content.replaceAll("AAAAAA", (donor.getEmail()!=null && !donor.getEmail().contains("@temp.com"))?donor.getEmail():"");
 			content = content.replaceAll("BBBBBB", donor.getPhone() !=null?donor.getPhone():"");
-			Files.write(Paths.get(sourceFolder+"/receipts/"+"/DonationReceipt-"+donor.getDonorId()+".rtf"), content.getBytes());
+			Files.write(Paths.get(sourceFolder+"/receipts/"+"/Receipt-"+donor.getFullName()+"-"+donor.getDonorId()+".rtf"), content.getBytes());
 		}
 	}
 	

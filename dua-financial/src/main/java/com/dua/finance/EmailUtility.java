@@ -86,7 +86,7 @@ public static void sendMail(List<Donor> donors, String sourceFolder)
 	    	message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(donor.getEmail())); 
 	    	
 	    	MimeBodyPart attachmentPart = new MimeBodyPart();
-	    	attachmentPart.attachFile(new File(sourceFolder+"/Receipts/pdf/DonationReceipt-"+donor.getDonorId()+".pdf"));
+	    	attachmentPart.attachFile(new File(sourceFolder+"/Receipts/pdf/Receipt-"+donor.getFullName()+"-"+donor.getDonorId()+".pdf"));
 	    	
 	    	Multipart multipart = new MimeMultipart();
 	    	multipart.addBodyPart(messageBodyPart);

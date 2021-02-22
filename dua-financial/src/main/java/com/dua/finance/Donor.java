@@ -1,9 +1,14 @@
 package com.dua.finance;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvBindByPosition;
 
 public class Donor {
+	
+	public static final Logger logger = LogManager.getLogger(Donor.class);
 
 	public Donor()
 	{
@@ -94,13 +99,19 @@ public class Donor {
 	public String emailSent;
 	
 	public String getFullName() {
+		if(Utility.isBlank(fullName))
+		{
+			fullName = getFirstName()+" "+getLastName();
+		}
 		return Utility.getCamelCase(fullName);
 	}
+	
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
+	
 	public String getFirstName() {
-		if(firstName == null)
+		if(Utility.isBlank(firstName))
 		{
 			if(fullName != null) {
 				return getFullName().substring(0, getFullName().indexOf(" "));
@@ -108,11 +119,13 @@ public class Donor {
 		}
 		return Utility.getCamelCase(firstName);		
 	}
+	
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+	
 	public String getLastName() {
-		if(lastName == null)
+		if(Utility.isBlank(lastName))
 		{
 			if(fullName != null) {
 				return getFullName().substring(getFullName().indexOf(" ")+1, getFullName().length());
@@ -120,48 +133,63 @@ public class Donor {
 		}
 		return Utility.getCamelCase(lastName);
 	}
+	
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
 	public String getEmail() {
 		return email;
 	}
+	
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	public double getDonationAmount() {
 		return donationAmount;
 	}
+	
 	public void setDonationAmount(double donationAmount) {
 		this.donationAmount = donationAmount;
 	}
+	
 	public String getPhone() {
 		return Utility.formatPhone(phone);
 	}
+	
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
 	public String getAddress1() {		
 		return address1;
 	}
+	
 	public void setAddress1(String address1) {
 		this.address1 = address1;
 	}
+	
 	public String getCity() {
 		return city;
 	}
+	
 	public void setCity(String city) {
 		this.city = city;
 	}
+	
 	public String getState() {
 		return state;
 	}
+	
 	public void setState(String state) {
 		this.state = state;
 	}
+	
 	public String getZip() {
 		return zip;
 	}
+	
 	public void setZip(String zip) {
 		this.zip = zip;
 	}
@@ -173,8 +201,6 @@ public class Donor {
 	public void setDonorId(int donorId) {
 		this.donorId = donorId;
 	}
-
-	
 	
 	public String getEmailSent() {
 		return emailSent;
