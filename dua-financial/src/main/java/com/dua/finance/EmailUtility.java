@@ -2,7 +2,9 @@ package com.dua.finance;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
@@ -86,7 +88,11 @@ public static void sendMail(List<Donor> donors, String sourceFolder)
 	    	message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(donor.getEmail())); 
 	    	
 	    	MimeBodyPart attachmentPart = new MimeBodyPart();
-	    	attachmentPart.attachFile(new File(sourceFolder+"/Receipts/pdf/Receipt-"+donor.getFullName()+"-"+donor.getDonorId()+".pdf"));
+	    	
+	    	File receipt = new File(sourceFolder+"/Receipts/Receipt-"+donor.getFullName()+"-"+donor.getDonorId()+".pdf");
+	    	File sentReceipt = new File(sourceFolder+"/Receipts/sent/Receipt-"+donor.getFullName()+"-"+donor.getDonorId()+".pdf");
+	    	File receiptToDelete = new File(sourceFolder+"/Receipts/Receipt-"+donor.getFullName()+"-"+donor.getDonorId()+".rtf");
+	    	attachmentPart.attachFile(receipt);
 	    	
 	    	Multipart multipart = new MimeMultipart();
 	    	multipart.addBodyPart(messageBodyPart);
@@ -94,11 +100,30 @@ public static void sendMail(List<Donor> donors, String sourceFolder)
 	
 	    	message.setContent(multipart);
 	        
-	    	Transport.send(message);
+	    	try {
+	    		if(receipt.exists()) {
+	    			Transport.send(message);
+	    			//move the receipt to sent folder
+	    	    	Files.move(receipt.toPath(), sentReceipt.toPath(), StandardCopyOption.REPLACE_EXISTING);
+	    	    	logger.info("{} sent to {}", receipt.getName(), donor.getEmail());
+	    		}
+	    		else
+	    		{
+	    			logger.info("{} doesn't exist",receipt.getName());
+	    		}
+	    	}
+	    	catch(Exception e)
+	    	{
+	    		e.printStackTrace();
+	    	}
 	    	
-	    	logger.info("Sent receipt to "+donor.getEmail());
 	    	
-	    	//update Email sent status
+	    	if(receiptToDelete.exists()) {
+	    		receiptToDelete.deleteOnExit();
+	    	}
+	    	else {
+	    		logger.info("{} doesn't exist",receiptToDelete.getName());
+	    	}
 	    	
     	}
         System.out.println("Done");

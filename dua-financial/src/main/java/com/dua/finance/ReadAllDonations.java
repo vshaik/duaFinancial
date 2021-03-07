@@ -31,10 +31,14 @@ public class ReadAllDonations {
 					System.exit(0);
 				}
 				String sourceFolder = args[0];
-				new ReadAllDonations().readDonationData(sourceFolder);
+				try {
+					new ReadAllDonations().readDonationData(sourceFolder);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 	}
 	
-	public void readDonationData(String sourceFolder)
+	public void readDonationData(String sourceFolder) throws Exception
 	{		
 		Map<String, Donor> donorMap = new HashMap<String, Donor>();
 		logger.info("scanning {}", sourceFolder);
@@ -46,22 +50,22 @@ public class ReadAllDonations {
 			return;
 		}
 		
-		String files[] = directory.list();
+		File files[] = directory.listFiles();
 		if(files.length == 0)
 		{
 			logger.error("files don't exist!");
 			return;
 		}
 		
-		for(String file : files)
+		for(File file : files)
 		{			
-			if(file.contains(AppConstants.FINAL_REPORT) || file.toUpperCase().contains("RECEIPTS") || file.toUpperCase().contains("SOURCE"))			
+			if(file.getName().contains(AppConstants.FINAL_REPORT) || file.isDirectory())
 			{
 				logger.info("skipping file/folder {}",file);
 				continue;
 			}
 			logger.info("reading file {}",file);
-			readFile(donorMap, sourceFolder+"/"+file);
+			readFile(donorMap, file);
 		}
 		
 		// Write to a final consolidated report
@@ -92,7 +96,7 @@ public class ReadAllDonations {
 		
 	}
 	
-	public static void readFile(Map<String, Donor> donorMap, String fileName) 
+	public static void readFile(Map<String, Donor> donorMap, File fileName) throws Exception 
 	{	
         try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
         	
@@ -157,7 +161,7 @@ public class ReadAllDonations {
         }
         catch(Exception e)
         {
-        	e.printStackTrace();
+        	throw new Exception(e);
         }
 	}
 	
