@@ -1,10 +1,14 @@
 package com.dua.finance;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.WordUtils;
@@ -172,5 +176,19 @@ public class Utility {
 	   List<Donor> objects = cb.parse();
 	   reader.close();
 	   return objects;
+	}
+	
+	public static Properties getConfigProperties(String file) throws Exception
+	{
+        try (InputStream input = new FileInputStream(file)) {
+            Properties props = new Properties();
+            // load a properties file
+            props.load(input);
+            return props;
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            throw new Exception(ex);
+        }        
 	}
 }

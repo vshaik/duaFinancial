@@ -40,9 +40,11 @@ public static void main(String args[])
 			logger.error("please provide a valid source folder!");
 			System.exit(0);
 		}
-		String sourceFolder = args[0];		
+		
+		String sourceFolder = args[0];
+		Properties appProps = Utility.getConfigProperties(sourceFolder + "/config/config.properties");
 		List<Donor> donors = Utility.beanBuilder(Paths.get(sourceFolder + "/" + AppConstants.FINAL_REPORT));		
-		sendMail(donors, sourceFolder);
+		sendMail(donors, sourceFolder, appProps);
 		
 	} catch (Exception e) {
 		e.printStackTrace();
@@ -50,20 +52,20 @@ public static void main(String args[])
 		
 }
 
-public static void sendMail(List<Donor> donors, String sourceFolder)
+public static void sendMail(List<Donor> donors, String sourceFolder, Properties appProps)
 {
 	Properties prop = new Properties();
-    prop.put("mail.smtp.host", "smtp.gmail.com");
-    prop.put("mail.smtp.port", "465");
+    prop.put("mail.smtp.host", appProps.getProperty("mail.smtp.host"));
+    prop.put("mail.smtp.port", appProps.getProperty("mail.smtp.port"));
     prop.put("mail.smtp.auth", "true");
-    prop.put("mail.smtp.socketFactory.port", "465");
+    prop.put("mail.smtp.socketFactory.port", appProps.getProperty("password"));
     prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 
     
 	Session session = Session.getInstance(prop,
             new javax.mail.Authenticator() {
                 protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication(AppConstants.EMAIL, AppConstants.PASSWORD);
+                    return new PasswordAuthentication(appProps.getProperty("email"), appProps.getProperty("password"));
                 }
             });
 
@@ -79,11 +81,11 @@ public static void sendMail(List<Donor> donors, String sourceFolder)
     		
 	    	BodyPart messageBodyPart = new MimeBodyPart(); 
 	    	messageBodyPart.setText("\n\n Assalamalekum, please find the attached donation receipt. "
-	    			+ "\n\n If you have any questions please contact us at "+AppConstants.EMAIL+" \n\n Jazakallah Khair, \n\n "+ AppConstants.ORG);
+	    			+ "\n\n If you have any questions please contact us at "+appProps.getProperty("email")+" \n\n Jazakallah Khair, \n\n "+ appProps.getProperty("org"));
 	    	
 	    	Message message = new MimeMessage(session); 
-	    	message.setFrom(new InternetAddress(AppConstants.EMAIL));
-	    	message.setSubject("Donation Receipt - "+AppConstants.ORG+" - Year 2020"); 
+	    	message.setFrom(new InternetAddress(appProps.getProperty("email")));
+	    	message.setSubject("Donation Receipt - "+appProps.getProperty("org")+" - Year "+appProps.getProperty("year")); 
 	    	
 	    	message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(donor.getEmail())); 
 	    	
@@ -106,6 +108,13 @@ public static void sendMail(List<Donor> donors, String sourceFolder)
 	    			//move the receipt to sent folder
 	    	    	Files.move(receipt.toPath(), sentReceipt.toPath(), StandardCopyOption.REPLACE_EXISTING);
 	    	    	logger.info("{} sent to {}", receipt.getName(), donor.getEmail());
+	    	    	
+	    	    	if(receiptToDelete.exists()) {
+	    	    		receiptToDelete.deleteOnExit();
+	    	    	}
+	    	    	else {
+	    	    		logger.info("{} doesn't exist",receiptToDelete.getName());
+	    	    	}
 	    		}
 	    		else
 	    		{
@@ -115,14 +124,6 @@ public static void sendMail(List<Donor> donors, String sourceFolder)
 	    	catch(Exception e)
 	    	{
 	    		e.printStackTrace();
-	    	}
-	    	
-	    	
-	    	if(receiptToDelete.exists()) {
-	    		receiptToDelete.deleteOnExit();
-	    	}
-	    	else {
-	    		logger.info("{} doesn't exist",receiptToDelete.getName());
 	    	}
 	    	
     	}

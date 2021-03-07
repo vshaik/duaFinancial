@@ -35,7 +35,7 @@ public class PrintReceipts {
 	{
 		List<Donor> donors = Utility.beanBuilder(Paths.get(sourceFolder+"/"+AppConstants.FINAL_REPORT));
 		logger.info("Donors list size: "+donors.size());
-		String templateContent = readAllBytes(sourceFolder+"/receipts/"+AppConstants.RECEIPT_TEMPLATE);
+		String templateContent = readAllBytes(sourceFolder+"/config/"+AppConstants.RECEIPT_TEMPLATE);
 		for(Donor donor : donors) {
 			String content = templateContent.replaceAll("XX-Name-XX", donor.getFullName());
 			content = content.replaceAll("XX-Amt-XX", Utility.getFormattedAmt(donor.getDonationAmount()));			
