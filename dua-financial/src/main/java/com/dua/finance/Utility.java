@@ -122,10 +122,15 @@ public class Utility {
 		{
 			return "";
 		}
+		s = s.replaceAll("[^\\d]", "");
 		s = s.replace(" ", "").trim();
 		s = s.replace("(", "");
 		s = s.replace(")", "");
 		s = s.replace("-", "");
+		
+		if(s.length()>10)
+			s = s.substring(1,s.length());
+		
 		s =  s.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
 		return s;
 	}
