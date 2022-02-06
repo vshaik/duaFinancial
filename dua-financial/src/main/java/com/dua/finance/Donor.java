@@ -113,8 +113,14 @@ public class Donor {
 	public String getFirstName() {
 		if(Utility.isBlank(firstName))
 		{
-			if(fullName != null) {
+			if(fullName != null) {				
+				if(getFullName().indexOf(" ")>0) {
 				return getFullName().substring(0, getFullName().indexOf(" "));
+				}
+				else
+				{
+					return getFullName();
+				}
 			}
 		}
 		return Utility.getCamelCase(firstName);		
