@@ -39,12 +39,12 @@ public class PrintReceipts {
 		for(Donor donor : donors) {
 			String content = templateContent.replaceAll("XX-Name-XX", donor.getFullName());
 			content = content.replaceAll("XX-Amt-XX", Utility.getFormattedAmt(donor.getDonationAmount()));			
-			content = content.replaceAll("Address: XX-1-XX", donor.getAddress1()!=null?donor.getAddress1():"");			
-			content = content.replaceAll("City: XX-2-XX", donor.getCity()!=null?donor.getCity():"");
-			content = content.replaceAll("State: XX-3-XX", donor.getState()!=null?donor.getState():"");
-			content = content.replaceAll("Zip: XX-4-XX", donor.getZip()!=null?donor.getZip():"");
-			content = content.replaceAll("AAAAAA", (donor.getEmail()!=null && !donor.getEmail().contains("@temp.com"))?donor.getEmail():"");
-			content = content.replaceAll("BBBBBB", donor.getPhone() !=null?donor.getPhone():"");
+			content = content.replaceAll("XX-Street-XX", donor.getAddress1()!=null?donor.getAddress1():"");			
+			content = content.replaceAll("XX-City-XX", donor.getCity()!=null?donor.getCity():"");
+			content = content.replaceAll("XX-State-XX", donor.getState()!=null?donor.getState():"");
+			content = content.replaceAll("XX-Zip-XX", donor.getZip()!=null?donor.getZip():"");
+			content = content.replaceAll("XX-Email-XX", (donor.getEmail()!=null && !donor.getEmail().contains("@temp.com"))?donor.getEmail():"");
+			content = content.replaceAll("XX-Phone-XX", donor.getPhone() !=null?donor.getPhone():"");
 			Files.write(Paths.get(sourceFolder+"/receipts/"+"/Receipt-"+donor.getFullName()+"-"+donor.getDonorId()+".rtf"), content.getBytes());
 		}
 	}
