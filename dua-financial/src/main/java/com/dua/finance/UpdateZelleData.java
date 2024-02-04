@@ -36,7 +36,7 @@ public class UpdateZelleData {
 	}
 
 	public void readDonorData(String sourceFolder) throws Exception {
-		Map<String, Donor> donorMap = new HashMap<String, Donor>();
+		List<Donor> donorList = new ArrayList<Donor>();
 		logger.info("scanning {}", sourceFolder);
 		File directory = new File(sourceFolder);
 
@@ -55,22 +55,21 @@ public class UpdateZelleData {
 			if (file.getName().contains("Overall Donor List.csv")) {
 				logger.info("skipping file/folder {}", file);
 				logger.info("reading file {}", file);
-				readFile(donorMap, file);
+				readFile(donorList, file);
 			}
 		}
 
 		for (File file : files) {
 			if (file.getName().contains("boa-zelle.csv")) {
-				readUpdateZelleFile(donorMap, file);
+				readUpdateZelleFile(donorList, file);
 			}
 		}
 
-		logger.info("donorMap size: {}", donorMap.size());
-		// logger.info("donorMap: {}", donorMap);
+		logger.info("donorList size: {}", donorList.size());
 
 	}
 
-	public static void readUpdateZelleFile(Map<String, Donor> donorMap, File fileName) {
+	public static void readUpdateZelleFile(List<Donor> donorList, File fileName) {
 
 		String outputCsvPath = "c:/zelle/updated-zelle.csv";
 		String nameRegex = "(?<=Zelle Transfer Conf# [^;]+; )(.+)|(?<=Zelle payment from )(.+?)(?=( for)| Conf#|$)";
@@ -99,14 +98,22 @@ public class UpdateZelleData {
 					String name = matcher.group().trim();
 					nextLine[nameIndex] = name; // Update the Name column
 
-					for (Map.Entry<String, Donor> entry : donorMap.entrySet()) {
-						String email = entry.getKey();
-						Donor donor = entry.getValue();
+					if (name.equals("TECHNIZANT LLC")) {
+						logger.info("stop");
+					}
+
+					// for (Map.Entry<String, Donor> entry : donorList.entrySet()) {
+					for (Donor donor : donorList) {
+
 						String normalizedInputName = normalizeName(name);
 						String normalizedDonorName = normalizeName(donor.getFullName());
-						// if (normalizedInputName.equals(normalizedDonorName)) {
+
+						if (donor.getFullName().equals("TECHNIZANT LLC")) {
+							logger.info("stop");
+						}
+
 						if (isPartialMatch(normalizedInputName, normalizedDonorName)) {
-							matchedEmail = email;
+							matchedEmail = donor.getEmail();
 							// Assuming you're breaking the loop after finding the first match
 							break;
 						}
@@ -132,7 +139,8 @@ public class UpdateZelleData {
 
 		for (String inputPart : inputNameParts) {
 			for (String donorPart : donorNameParts) {
-				if (normalizeName(donorPart).contains(normalizeName(inputPart))) {
+				if (normalizeName(donorPart).contains(normalizeName(inputPart))
+						|| normalizeName(inputPart).contains(normalizeName(donorPart))) {
 					return true;
 				}
 			}
@@ -144,7 +152,7 @@ public class UpdateZelleData {
 		return name.replaceAll("[^A-Za-z0-9]", "").toLowerCase();
 	}
 
-	public static void readFile(Map<String, Donor> donorMap, File fileName) throws Exception {
+	public static void readFile(List<Donor> donorList, File fileName) throws Exception {
 		try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
 
 			List<String[]> recList = reader.readAll();
@@ -176,16 +184,9 @@ public class UpdateZelleData {
 
 				email = email.trim();
 
-				Donor donor = donorMap.get(email);
-				Donor temp = new Donor(fullName, firstName, lastName, email, 0, null, null, null, null, null);
+				Donor donor = new Donor(fullName, firstName, lastName, email, 0, null, null, null, null, null);
 
-				if (donor == null) {
-					donor = temp;
-				} else {
-					donor = Utility.syncObject(donor, temp);
-				}
-
-				donorMap.put(email, donor);
+				donorList.add(donor);
 			}
 
 		} catch (Exception e) {
