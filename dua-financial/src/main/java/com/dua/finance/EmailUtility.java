@@ -55,10 +55,17 @@ public static void main(String args[])
 public static void sendMail(List<Donor> donors, String sourceFolder, Properties appProps)
 {
 	Properties prop = new Properties();
+	/*
+	 * prop.put("mail.smtp.host", appProps.getProperty("mail.smtp.host"));
+	 * prop.put("mail.smtp.port", appProps.getProperty("mail.smtp.port"));
+	 * prop.put("mail.smtp.auth", "true"); prop.put("mail.smtp.socketFactory.port",
+	 * appProps.getProperty("mail.smtp.port"));
+	 * prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+	 */
     prop.put("mail.smtp.host", appProps.getProperty("mail.smtp.host"));
     prop.put("mail.smtp.port", appProps.getProperty("mail.smtp.port"));
     prop.put("mail.smtp.auth", "true");
-    prop.put("mail.smtp.socketFactory.port", appProps.getProperty("password"));
+    prop.put("mail.smtp.socketFactory.port", appProps.getProperty("mail.smtp.port")); // Correct this line
     prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 
     
@@ -81,7 +88,7 @@ public static void sendMail(List<Donor> donors, String sourceFolder, Properties 
     		
 	    	BodyPart messageBodyPart = new MimeBodyPart(); 
 	    	messageBodyPart.setText("\n\n Assalamalekum, please find the attached donation receipt. "
-	    			+ "\n\n If you have any questions please contact us at "+appProps.getProperty("email")+" \n\n Jazakallah Khair, \n\n "+ appProps.getProperty("org"));
+	    			+ "\n\n If you have any questions please contact us at "+appProps.getProperty("email")+" \n\n Jazakallah Khair, \n\n "+ appProps.getProperty("org") +"\n "+ appProps.getProperty("website"));
 	    	
 	    	Message message = new MimeMessage(session); 
 	    	message.setFrom(new InternetAddress(appProps.getProperty("email")));
