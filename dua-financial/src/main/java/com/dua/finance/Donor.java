@@ -15,7 +15,7 @@ public class Donor {
 	}
 
 	public Donor(String fullName, String firstName, String lastName, String email, double donationAmount, String phone,
-			String address1, String city, String state, String zip) {
+			String address1, String city, String state, String zip, String mode, String project) {
 		this.fullName = fullName;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -26,6 +26,8 @@ public class Donor {
 		this.city = Utility.getCamelCase(city);
 		this.state = state;
 		this.zip = zip;
+		this.project = project;
+		this.mode = mode;
 
 		if (city == null && address1 != null) {
 			String[] temp = address1.split(",");
@@ -90,8 +92,16 @@ public class Donor {
 	@CsvBindByPosition(position = 10)
 	public double donationAmount;
 
-	@CsvBindByName(column = "Email Sent")
+	@CsvBindByName(column = "Mode")
 	@CsvBindByPosition(position = 11)
+	public String mode;
+	
+	@CsvBindByName(column = "Project")
+	@CsvBindByPosition(position = 12)
+	public String project;
+	
+	@CsvBindByName(column = "Email Sent")
+	@CsvBindByPosition(position = 13)
 	public String emailSent;
 
 	public String getFullName() {
@@ -198,6 +208,22 @@ public class Donor {
 		this.zip = zip;
 	}
 
+	public String getMode() {
+		return mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+	}
+
+	public String getProject() {
+		return project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+	}
+
 	public int getDonorId() {
 		return donorId;
 	}
@@ -218,11 +244,11 @@ public class Donor {
 	public String toString() {
 		return "Donor [donorId=" + donorId + ", fullName=" + fullName + ", firstName=" + firstName + ", lastName="
 				+ lastName + ", email=" + email + ", phone=" + phone + ", address1=" + address1 + ", city=" + city
-				+ ", state=" + state + ", zip=" + zip + ", donationAmount=" + donationAmount + ", emailSent="
-				+ emailSent + "]";
+				+ ", state=" + state + ", zip=" + zip + ", donationAmount=" + donationAmount + ", mode=" + mode
+				+ ", project=" + project + ", emailSent=" + emailSent + "]";
 	}
 
 	public static String getHeader() {
-		return "#, Name,	First Name,	Last Name,	Email,	Phone,	address,	City,	State,	Zip,	Donation, Email Sent \n";
+		return "#, Name,	First Name,	Last Name,	Email,	Phone,	address,	City,	State,	Zip,	Donation, Mode, Project, Email Sent \n";
 	}
 }

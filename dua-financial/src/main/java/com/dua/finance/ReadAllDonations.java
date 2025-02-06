@@ -110,7 +110,7 @@ public class ReadAllDonations {
             		continue;
             	}
 
-            	String fullName=null, firstName=null, lastName=null, email=null, phone=null, address1=null, city=null, state=null, zip=null;
+            	String fullName=null, firstName=null, lastName=null, email=null, phone=null, address1=null, city=null, state=null, zip=null, mode, project;
             	double donationAmount;
 
             	fullName = rec[0];            	
@@ -140,11 +140,13 @@ public class ReadAllDonations {
             	city = rec[6];
             	state = rec[7];
             	zip = rec[8];
+            	mode = rec[9];
+            	project = rec[10];
             	
             	donationAmount = Utility.getDouble(rec[9]);
             	
             	Donor donor = donorMap.get(email);            	
-            	Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, city, state, zip);
+            	Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, city, state, zip, mode, project);
 
             	if(donor==null) {
             		donor = temp;

@@ -94,7 +94,7 @@ public class DonationsWithOutEmail {
 					continue;
 				}
 
-				String fullName = null, firstName = null, lastName = null, email = null, phone = null, address1 = null,
+				String fullName = null, firstName = null, lastName = null, email = null, phone = null, address1 = null, mode = null, project = null,
 						city = null, state = null, zip = null;
 				double donationAmount;
 
@@ -122,12 +122,14 @@ public class DonationsWithOutEmail {
 				city = rec[7];
 				state = rec[8];
 				zip = rec[9];
+				mode = rec[10];
+				project = rec[11];
 
 				donationAmount = Utility.getDouble(rec[10]);
 
 				Donor donor = donorMap.get(fullName);
 				Donor temp = new Donor(fullName, firstName, lastName, email, donationAmount, phone, address1, city,
-						state, zip);
+						state, zip, mode, project);
 
 				if (donor == null) {
 					donor = temp;

@@ -184,7 +184,7 @@ public class UpdateZelleData {
 
 				email = email.trim();
 
-				Donor donor = new Donor(fullName, firstName, lastName, email, 0, null, null, null, null, null);
+				Donor donor = new Donor(fullName, firstName, lastName, email, 0, null, null, null, null, null, null, null);
 
 				donorList.add(donor);
 			}
